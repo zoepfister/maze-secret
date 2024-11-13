@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://bgqenbwo7glm1"]
+[gd_scene load_steps=68 format=3 uid="uid://bgqenbwo7glm1"]
 
 [ext_resource type="Script" path="res://scripts/player/ProtagonistController.gd" id="1_m6df3"]
 [ext_resource type="Texture2D" uid="uid://bg85bmmhrscwl" path="res://assets/The Female Adventurer - Free/Idle/Idle_Down.png" id="2_s6apj"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b0d5ebo1a41qt" path="res://assets/The Female Adventurer - Free/Walk/walk_Right_Down.png" id="5_gr3ig"]
 [ext_resource type="Texture2D" uid="uid://cc0fe5vnasflp" path="res://assets/The Female Adventurer - Free/Walk/walk_Right_Up.png" id="6_quvrt"]
 [ext_resource type="Texture2D" uid="uid://cdti2mao0unoj" path="res://assets/The Female Adventurer - Free/Walk/walk_Up.png" id="7_kasfk"]
+[ext_resource type="PackedScene" uid="uid://b4j1mbkq7q5yj" path="res://scripts/thread/thread.tscn" id="9_5p2xj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0s2ov"]
 radius = 7.0
@@ -460,3 +461,6 @@ texture_filter = 1
 position = Vector2(24, 32)
 sprite_frames = SubResource("SpriteFrames_vfxor")
 animation = &"idle"
+
+[node name="Thread" parent="." node_paths=PackedStringArray("trackedObject") instance=ExtResource("9_5p2xj")]
+trackedObject = NodePath("../Protagonist")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4j1mbkq7q5yj"]
+
+[ext_resource type="Script" path="res://scripts/thread/thread_script.gd" id="1_y5wdj"]
+
+[node name="Thread" type="Node2D" node_paths=PackedStringArray("track")]
+script = ExtResource("1_y5wdj")
+track = NodePath("Line2D")
+
+[node name="Line2D" type="Line2D" parent="."]
+default_color = Color(0.819608, 0.184314, 0.227451, 1)
