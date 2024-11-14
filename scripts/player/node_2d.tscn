@@ -462,5 +462,5 @@ position = Vector2(24, 32)
 sprite_frames = SubResource("SpriteFrames_vfxor")
 animation = &"idle"
 
-[node name="Thread" parent="." node_paths=PackedStringArray("trackedObject") instance=ExtResource("9_5p2xj")]
-trackedObject = NodePath("../Protagonist")
+[node name="Thread" parent="." node_paths=PackedStringArray("tracked_object") instance=ExtResource("9_5p2xj")]
+tracked_object = NodePath("../Protagonist")
