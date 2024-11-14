@@ -445,6 +445,7 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(72, 96)
 
 [node name="Protagonist" type="CharacterBody2D" parent="."]
 scale = Vector2(3, 3)
@@ -453,12 +454,10 @@ acceleration = 1000
 max_speed = 200
 
 [node name="ProtagonistCollision" type="CollisionShape2D" parent="Protagonist"]
-position = Vector2(24, 32)
 shape = SubResource("CapsuleShape2D_0s2ov")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Protagonist"]
 texture_filter = 1
-position = Vector2(24, 32)
 sprite_frames = SubResource("SpriteFrames_vfxor")
 animation = &"idle"
 

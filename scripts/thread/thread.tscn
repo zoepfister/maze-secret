@@ -7,7 +7,6 @@
 [node name="Thread" type="Node2D" node_paths=PackedStringArray("track", "collision_shape")]
 script = ExtResource("1_y5wdj")
 track = NodePath("Line2D")
-minimum_distance_for_trigger = 40.0
 collision_shape = NodePath("Area2D/CollisionShape2D")
 
 [node name="Line2D" type="Line2D" parent="."]
@@ -19,3 +18,4 @@ default_color = Color(0.819608, 0.184314, 0.227451, 1)
 shape = SubResource("RectangleShape2D_8gd0v")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
