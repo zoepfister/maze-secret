@@ -3,11 +3,10 @@
 [ext_resource type="Script" path="res://scripts/thread/thread_script.gd" id="1_y5wdj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gd0v"]
+size = Vector2(1, 30)
 
-[node name="Thread" type="Node2D" node_paths=PackedStringArray("track", "collision_shape")]
+[node name="Thread" type="Node2D"]
 script = ExtResource("1_y5wdj")
-track = NodePath("Line2D")
-collision_shape = NodePath("Area2D/CollisionShape2D")
 
 [node name="Line2D" type="Line2D" parent="."]
 default_color = Color(0.819608, 0.184314, 0.227451, 1)

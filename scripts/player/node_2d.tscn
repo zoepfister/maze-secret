@@ -461,5 +461,8 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_vfxor")
 animation = &"idle"
 
-[node name="Thread" parent="." node_paths=PackedStringArray("tracked_object") instance=ExtResource("9_5p2xj")]
-tracked_object = NodePath("../Protagonist")
+[node name="Thread" parent="." node_paths=PackedStringArray("tracked") instance=ExtResource("9_5p2xj")]
+tracked = NodePath("../Protagonist")
+create_point_treshold = 50.0
+collision_shape_x = 1.0
+offset = 0.3

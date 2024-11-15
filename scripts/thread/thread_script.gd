@@ -1,82 +1,69 @@
+# Script to draw a line that follows player's movement to simulate the thread
+# 
+# The tracked object (i.e., the player) has two state: drawing and backtracking
+#	Drawing: 		add new points to the line if the tracked object covered enough distance (create_point_treshold).
+#					As soon as the player reaches near the second to last point, enter the Backtracking state.
+#	Backtracking: 	while the tracked object is near the second to last point (where near means distance(object, point) < backtrack_treshold),
+#					delete the last point (which will update the second to last point to be now the third to last and so on.
+# 					As soon as the player deviate from the second to last point, enter the Drawing state.
+#					If only two point remains in the line, enter te Drawing state.
+
 extends Node2D
 
-@export var tracked_object : Node2D
-@export var track : Line2D
-@export var minimum_distance_for_update : float = 7.0
-@export var minimum_distance_for_trigger : float = 55.0
-var previous_position : Vector2
-var vertical_epsilon : float = 25.0
-var horizontal_epsilon : float = 10.0
-@export var backtrack_vertical_offset : float = 10
-var backtrack_trigger : RectangleShape2D
-var trigger_point : Vector2
-@export var collision_shape : CollisionShape2D
-var is_trigger_active : bool = false
-var is_backtracking : bool = false
-var backtrack_direction : Vector2
-var angle_treshold: float = deg_to_rad(25)
+enum states {DRAWING, BACKTRACKING}
+
+@export var tracked : Node2D
+var line : Line2D
+var state : states
+var area_2d : Area2D
+var collision_shape : CollisionShape2D
+
+@export var create_point_treshold : float = 1000.0
+@export var collision_shape_x : float = 2.5
+@export var collision_shape_y : float = 2.5
+@export var offset : float = 0.25
+
+var enabled : bool = false
+
 
 func _ready() -> void:
-	print("Global: ", tracked_object.global_position, "\nPosition: ", tracked_object.position)
-	previous_position = tracked_object.position
-	track.points =  [previous_position, previous_position]	# To update immidiately the second point
-	backtrack_trigger = collision_shape.shape
+	# initialize the line with two point. The start will be fixed; the end will follow the tracked object
+	line = $Line2D
+	area_2d = $Area2D
+	collision_shape = $Area2D/CollisionShape2D
+	line.points = [self.position, tracked.position]
 
 func _process(delta: float) -> void:
-	var new_position = tracked_object.position
-	if !enough_distance_covered(new_position) || is_backtracking: return 
-	if linear_movement(new_position): return track_linear_movement(new_position)
-	track_movement(new_position)
+	var tracked_curr_pos = tracked.position
+	line.set_point_position(line.get_point_count() - 1, tracked_curr_pos)
+	# Draw or erase part of the thread
+	if tracked_curr_pos.distance_to(line.points[line.get_point_count() - 2]) > create_point_treshold:
+		add_point(tracked_curr_pos)
+	# if player is backtracking, then remove points 
+	 
+	pass
+
+func add_point(current_position : Vector2):
+	line.add_point(current_position, line.get_point_count() - 1)
+	place_area()
+	print("# points: ", line.get_point_count())
+
+func place_area():
+	if(line.get_point_count() < 3) : return
+	var p1 = line.points[-3]
+	var p2 = line.points[-2]
+	var direction = p1.direction_to(p2)
+	collision_shape.position = (p2 - p1) * offset + p1
+	collision_shape.rotation = direction.angle()
 	
-func enough_distance_covered(tracked_curr_pos : Vector2) -> bool:
-	return (abs(tracked_curr_pos.x - previous_position.x) > minimum_distance_for_update ||
-	 abs(tracked_curr_pos.y - previous_position.y) > minimum_distance_for_update)
+func _on_area_2d_body_entered(body:Node2D):
+	if enabled && body == tracked:
+		print("Entered area...")
+		line.remove_point(line.get_point_count() - 2)
+		place_area()
 
-func linear_movement(tracked_curr_pos : Vector2) -> bool:
-	return is_horizontal_movement(tracked_curr_pos.y) || is_vertical_movement(tracked_curr_pos.x)
-	
-func is_horizontal_movement(tracked_curr_pos_y : float) -> bool:
-	return abs(tracked_curr_pos_y - previous_position.y) < vertical_epsilon
-
-func is_vertical_movement(tracked_curr_pos_x : float) -> bool:
-	return abs(tracked_curr_pos_x - previous_position.x) < horizontal_epsilon
-	
-func backtrack() -> void:
-	track.remove_point(track.get_point_count() - 1)
-	set_backtrack_trigger()
-	if deviation_from_backtrack_direction() > angle_treshold:
-		is_backtracking = false
-
-func set_backtrack_trigger() -> void:
-	if(track.get_point_count() < 3) : return
-	var p1 = track.points[-3]
-	var p2 = track.points[-2]
-	var distance = p1.distance_to(p2)
-	backtrack_trigger.size.x = distance
-	backtrack_trigger.size.y = backtrack_vertical_offset
-	collision_shape.position = Vector2((p1.x + p2.x)*0.5, (p1.y + p2.y)*0.5)
-	backtrack_direction = p1.direction_to(p2)
-	collision_shape.rotation = backtrack_direction.angle()
-	trigger_point = p2
-
-func deviation_from_backtrack_direction() -> float:
-	return abs(tracked_object.position.direction_to(trigger_point).angle_to(backtrack_direction)) 
-
-func track_linear_movement(new_point : Vector2) -> void : 
-	track.set_point_position(track.get_point_count() -1 , new_point)
-	
-func track_movement(new_point : Vector2) -> void :
-	track.add_point(new_point)
-	set_backtrack_trigger()
-	is_trigger_active = false
-	previous_position = new_point
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if is_trigger_active && body == tracked_object:
-		print("Player triggered:\n\tplayer position: ", tracked_object.position, "\n\tlast point: ", trigger_point, "\n\tprevious position: ", previous_position)
-		is_backtracking = true
-		backtrack()
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if !is_trigger_active && body == tracked_object:
-		is_trigger_active = true
+	if !enabled && body == tracked:
+		enabled = true
+		
