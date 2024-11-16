@@ -459,6 +459,7 @@ tile_map_data = PackedByteArray("AAD5//X/AgADAAAAAAD5//b/AgACAAEAAAD5//f/AgAJAAE
 tile_set = ExtResource("1_ffvxd")
 
 [node name="Protagonist" type="CharacterBody2D" parent="."]
+z_index = 2
 scale = Vector2(3, 3)
 script = ExtResource("1_m6df3")
 acceleration = 1000
@@ -474,7 +475,10 @@ animation = &"idle"
 frame = 2
 frame_progress = 0.973647
 
+[node name="Camera2D" type="Camera2D" parent="Protagonist"]
+
 [node name="Thread" parent="." node_paths=PackedStringArray("tracked") instance=ExtResource("9_5p2xj")]
+z_index = 1
 tracked = NodePath("../Protagonist")
 create_point_treshold = 50.0
 collision_shape_x = 1.0
