@@ -9,6 +9,7 @@ func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 	direction.x = Input.get_axis("ui_left", "ui_right")
 	direction.y = Input.get_axis("ui_up", "ui_down")
+	$PlayerCamera.make_current()
 
  # Normalize direction to prevent faster diagonal movement
 	if direction.length() > 0:
