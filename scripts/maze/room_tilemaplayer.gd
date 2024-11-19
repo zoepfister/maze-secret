@@ -51,7 +51,7 @@ var CENTER_FLOOR_TILES : Array[Vector2i] = [
 	Vector2i(9,2),
 ]
 @export_group("Room dimensions")
-@export var tile_size : int = 16
+var tile_size : Vector2i
 @export var width : int = 10
 @export var length : int = 10
 @export var wall_height : int = 5 
@@ -62,12 +62,13 @@ var CENTER_FLOOR_TILES : Array[Vector2i] = [
 @export var Right : bool
 @export_group("")
 @export var visited : bool
-@onready var horizontal_trigger : PackedScene
+@onready var room_trigger : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	horizontal_trigger = preload("res://scripts/maze/room_horizontal_trigger.tscn")
+	room_trigger = preload("res://scripts/maze/room_trigger.tscn")
 	var tile_map : TileMapLayer = $TileMapLayer
+	tile_size = tile_map.tile_set.tile_size
 	# Clear before drawing
 	tile_map.clear()
 	
@@ -108,32 +109,24 @@ func draw_floor(tile_map: TileMapLayer) -> void:
 
 func create_entrances(tile_map : TileMapLayer) -> void:
 	# TODO: draw floor and proper walls for entrance
+	if !(Top || Bottom || Left || Right): return
+	add_trigger()
 	if Top:
 		for i in range(-2, 2):
 			for j in range (1, wall_height + 1):
 				tile_map.erase_cell(Vector2i(width * 0.5 + i, -j))
-		add_trigger(Vector2(width * 0.5 * tile_size, -0.5 * tile_size), deg_to_rad(90))
 	if Bottom:
 		for i in range(-2,2):
 			tile_map.erase_cell(Vector2i(width * 0.5 + i, length))
-		add_trigger(Vector2(width * 0.5 * tile_size, length * tile_size + 0.5 * tile_size), deg_to_rad(90))
 	if Left:
 		for i in range(-2,2):
 			tile_map.erase_cell(Vector2i(-1, length * 0.5 + i))
-		add_trigger(Vector2(-tile_size*0.5, length * 0.5 * tile_size))
 	if Right:
 		for i in range(-2,2):
 			tile_map.erase_cell(Vector2i(width, length * 0.5 + i))
-		add_trigger(Vector2(width * tile_size + tile_size * 0.5, length * 0.5 * tile_size))
 		
-func add_trigger(position : Vector2, rotation: float = 0.0):
-	var trigger = horizontal_trigger.instantiate().set_room(self)
+func add_trigger():
+	var trigger = room_trigger.instantiate()
 	add_child(trigger)
-	trigger.position = position
-	trigger.rotation = rotation
-	
-func get_visited() -> bool :
-	return visited
-	
-func set_visited(value: bool) -> void:
-	visited = value
+	trigger.position = Vector2(width * 0.5 * tile_size.x, length * 0.5 * tile_size.y)
+	trigger.set_size(Vector2(width * tile_size.x, length * tile_size.y) * 0.95)
