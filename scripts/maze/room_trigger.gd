@@ -3,7 +3,7 @@ class_name RoomTrigger
 
 var camera_trigger : CollisionShape2D
 var viewport_camera : Camera2D
-@export var zooming_speed : float = 0.01
+@export var zooming_speed : float = 1.0
 @export var room_zoom : Vector2 = Vector2(0.7, 0.7)
 var initial_zoom : Vector2
 var player_entered_room : bool = false
@@ -19,9 +19,9 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if player_entered_room :
-		viewport_camera.zoom = lerp(viewport_camera.zoom, room_zoom, zooming_speed)
+		viewport_camera.zoom = lerp(viewport_camera.zoom, room_zoom, zooming_speed * delta)
 	else :
-		viewport_camera.zoom = lerp(viewport_camera.zoom, initial_zoom, zooming_speed)
+		viewport_camera.zoom = lerp(viewport_camera.zoom, initial_zoom, zooming_speed * delta)
 	
 func _on_body_entered(body: Node2D) -> void: 
 	if body.name == "Protagonist":

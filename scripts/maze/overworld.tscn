@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvlaoqnucbvk4"]
 
-[ext_resource type="PackedScene" uid="uid://2uynxmjxie46" path="res://scripts/maze/entrance.tscn" id="1_2bkj2"]
-[ext_resource type="PackedScene" uid="uid://c4nvo8f5fpyxa" path="res://scripts/maze/First_secret_room.tscn" id="2_fhaty"]
+[ext_resource type="PackedScene" uid="uid://2uynxmjxie46" path="res://scripts/maze/Entrance/entrance.tscn" id="1_2bkj2"]
+[ext_resource type="PackedScene" uid="uid://c4nvo8f5fpyxa" path="res://scripts/maze/First_secret_room/First_secret_room.tscn" id="2_fhaty"]
 [ext_resource type="PackedScene" uid="uid://c0y136254pmfc" path="res://scripts/maze/Room.tscn" id="3_rq11s"]
 
 [node name="world" type="Node2D"]
@@ -17,11 +17,3 @@ position = Vector2(217, 265)
 width = 30
 length = 45
 Top = false
-visited = null
-
-[connection signal="body_entered" from="Room/Area2D" to="Room/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Room/Area2D" to="Room/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="Room/@Area2D@17327" to="Room/@Area2D@17327" method="_on_body_entered"]
-[connection signal="body_exited" from="Room/@Area2D@17327" to="Room/@Area2D@17327" method="_on_body_exited"]
-[connection signal="body_entered" from="Room/@Area2D@17328" to="Room/@Area2D@17328" method="_on_body_entered"]
-[connection signal="body_exited" from="Room/@Area2D@17328" to="Room/@Area2D@17328" method="_on_body_exited"]

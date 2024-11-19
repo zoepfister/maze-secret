@@ -108,9 +108,8 @@ func draw_floor(tile_map: TileMapLayer) -> void:
 			tile_map.set_cell(Vector2i(i,j), 2, CENTER_FLOOR_TILES.pick_random())
 
 func create_entrances(tile_map : TileMapLayer) -> void:
-	# TODO: draw floor and proper walls for entrance
-	if !(Top || Bottom || Left || Right): return
-	add_trigger()
+	if not Engine.is_editor_hint():
+		add_trigger()
 	if Top:
 		for i in range(-2, 2):
 			for j in range (1, wall_height + 1):
