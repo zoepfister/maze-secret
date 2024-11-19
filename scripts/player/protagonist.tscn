@@ -462,7 +462,6 @@ frame_progress = 0.973647
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
 zoom = Vector2(1.2, 1.2)
-limit_left = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
