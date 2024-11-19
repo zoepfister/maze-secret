@@ -61,7 +61,8 @@ var CENTER_FLOOR_TILES : Array[Vector2i] = [
 @export var Bottom : bool
 @export var Right : bool
 @export_group("")
-@onready var horizontal_trigger
+@export var visited : bool
+@onready var horizontal_trigger : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -126,7 +127,13 @@ func create_entrances(tile_map : TileMapLayer) -> void:
 		add_trigger(Vector2(width * tile_size + tile_size * 0.5, length * 0.5 * tile_size))
 		
 func add_trigger(position : Vector2, rotation: float = 0.0):
-	var trigger = horizontal_trigger.instantiate()
+	var trigger = horizontal_trigger.instantiate().set_room(self)
 	add_child(trigger)
 	trigger.position = position
 	trigger.rotation = rotation
+	
+func get_visited() -> bool :
+	return visited
+	
+func set_visited(value: bool) -> void:
+	visited = value
