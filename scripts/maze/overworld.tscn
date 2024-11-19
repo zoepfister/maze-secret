@@ -15,9 +15,11 @@ position = Vector2(2499, 703)
 [node name="Room" parent="." instance=ExtResource("3_rq11s")]
 position = Vector2(217, 265)
 width = 30
-length = 30
+length = 45
+Top = false
+Left = true
 
 [connection signal="body_entered" from="Room/Area2D" to="Room/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Room/Area2D" to="Room/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="Room/@Area2D@288352" to="Room/@Area2D@288352" method="_on_body_entered"]
-[connection signal="body_exited" from="Room/@Area2D@288352" to="Room/@Area2D@288352" method="_on_body_exited"]
+[connection signal="body_entered" from="Room/@Area2D@20679" to="Room/@Area2D@20679" method="_on_body_entered"]
+[connection signal="body_exited" from="Room/@Area2D@20679" to="Room/@Area2D@20679" method="_on_body_exited"]

@@ -32,7 +32,12 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Protagonist":
 		var direction_sign = body.global_position.direction_to(camera_trigger.global_position).sign()
-		if (direction_sign.x != direction_sign_on_entered.x ||
-			direction_sign.y != direction_sign_on_entered.y): 
+		if (horizontal_entrance_check(direction_sign) || vertical_entrance_check(direction_sign)): 
 			return
 		visited = !visited
+
+func horizontal_entrance_check(direction_sign : Vector2) -> bool:
+	return rotation == deg_to_rad(0) && direction_sign.x != direction_sign_on_entered.x
+	
+func vertical_entrance_check(direction_sign : Vector2) -> bool:
+	return rotation == deg_to_rad(90) && direction_sign.y != direction_sign_on_entered.y
