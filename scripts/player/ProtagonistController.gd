@@ -4,7 +4,12 @@ extends CharacterBody2D
 @export var max_speed = 300     # Maximum speed in pixels per second
 @export var friction = INF     # Deceleration when not moving in pixels per second squared= 300;
 
+# For debugging
+@export var has_torch : bool = false
+var animation_suffix : String = ""
+
 func _physics_process(delta: float) -> void:
+	$PointLight2D.enabled = has_torch
 	# Get input direction
 	var direction = Vector2.ZERO
 	direction.x = Input.get_axis("ui_left", "ui_right")
@@ -32,18 +37,24 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	#
+	if has_torch : animation_suffix = "_torch"
+	else: animation_suffix = ""
+	
 	if direction != Vector2.ZERO:
 		# Character is moving
 		if direction.x == 1:
-			$AnimatedSprite2D.play("walk_right_down")
+			$AnimatedSprite2D.play("walk_right_down"+animation_suffix)
 		# Flip sprite based on movement direction
 		if direction.x == -1:
-			$AnimatedSprite2D.play("walk_left_down")
+			$AnimatedSprite2D.play("walk_left_down"+animation_suffix)
 			
 		if direction.y == 1:
-			$AnimatedSprite2D.play("walk_down")
+			$AnimatedSprite2D.play("walk_down"+animation_suffix)
 		if direction.y == -1:
-			$AnimatedSprite2D.play("walk_up")
+			$AnimatedSprite2D.play("walk_up"+animation_suffix)
 	else:
 		# Character is idle
-		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D.play("idle"+animation_suffix)
+
+func get_has_torch() -> bool:
+	return has_torch
