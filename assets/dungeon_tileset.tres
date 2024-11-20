@@ -296,7 +296,6 @@ texture = ExtResource("1_cfq2e")
 
 [resource]
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 2
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "floor"
 terrain_set_0/terrain_0/color = Color(0.851412, 0.40912, 0.648027, 1)
