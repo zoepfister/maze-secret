@@ -6,8 +6,8 @@
 size = Vector2(7, 169)
 
 [node name="Area2D" type="Area2D"]
-collision_layer = 2
-collision_mask = 2
+collision_layer = 1
+collision_mask = 3
 script = ExtResource("1_rb240")
 
 [node name="CameraTrigger" type="CollisionShape2D" parent="."]
