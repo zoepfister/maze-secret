@@ -5,7 +5,9 @@ var touched_wall = false;
 @export var alpha = .8
 @export var arc_color = Color(0.5, 0.8, 1.0, alpha)
 @export var fade_out_speed = .5
+@export var sound_effect = preload("res://assets/sounds/echolocate.wav")
 
+var audio_player = AudioStreamPlayer.new()
 
 func _ready():
 	var collision_shape = CollisionShape2D.new()
@@ -13,7 +15,14 @@ func _ready():
 	collision_shape.position = Vector2.ZERO;
 	collision_shape.shape = circle_shape
 	add_child(collision_shape)
+	handle_sound()
 	body_entered.connect(_on_body_entered)
+
+func handle_sound():
+	add_child(audio_player)
+	audio_player.stream = sound_effect
+	audio_player.volume_db = -20
+	audio_player.play()
 
 func _draw():
 	# Draw main arc
