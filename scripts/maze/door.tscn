@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bkxkhprff55lo"]
+[gd_scene load_steps=16 format=3 uid="uid://eqhaanrj48x2"]
 
-[ext_resource type="Texture2D" uid="uid://d17e7t344xwnl" path="res://assets/door_closed.png" id="1_5nwlr"]
-[ext_resource type="Texture2D" uid="uid://cxhh57el0qiwo" path="res://assets/door_opening.png" id="2_rrax2"]
+[ext_resource type="Texture2D" uid="uid://d17e7t344xwnl" path="res://assets/maze/door_closed.png" id="1_5nwlr"]
+[ext_resource type="Texture2D" uid="uid://cxhh57el0qiwo" path="res://assets/maze/door_opening.png" id="2_rrax2"]
 [ext_resource type="Script" path="res://scripts/torch/door.gd" id="3_8n40b"]
 [ext_resource type="PackedScene" uid="uid://hbco22vtplww" path="res://interaction/interaction_area/InteractionArea.tscn" id="4_311g0"]
 
@@ -85,7 +85,7 @@ animations = [{
 size = Vector2(48, 25)
 
 [node name="Door" type="AnimatedSprite2D"]
-position = Vector2(288, -31)
+position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_8mwkp")
 animation = &"opening"
 script = ExtResource("3_8n40b")
@@ -94,5 +94,5 @@ script = ExtResource("3_8n40b")
 action_name = "open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(1, 17.5)
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_ktb2f")

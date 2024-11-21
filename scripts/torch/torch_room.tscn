@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=4 uid="uid://c43j5sa0e8jal"]
 
-[ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/dungeon_tileset.tres" id="1_r0otk"]
+[ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/maze/dungeon_tileset.tres" id="1_r0otk"]
 [ext_resource type="PackedScene" uid="uid://dbg2t7lsyr8tl" path="res://scripts/maze/room_trigger.tscn" id="2_eyw0h"]
-[ext_resource type="Texture2D" uid="uid://cdmkgflcmhbsi" path="res://assets/torch.png" id="3_b46sx"]
+[ext_resource type="Texture2D" uid="uid://cdmkgflcmhbsi" path="res://assets/lights/torch.png" id="3_b46sx"]
 [ext_resource type="Script" path="res://scripts/torch/torch.gd" id="4_req2m"]
 [ext_resource type="PackedScene" uid="uid://hbco22vtplww" path="res://interaction/interaction_area/InteractionArea.tscn" id="5_s0gl0"]
 

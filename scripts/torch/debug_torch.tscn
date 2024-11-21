@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://bakxm8fuiu18n"]
 
-[ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/dungeon_tileset.tres" id="3_apdos"]
-[ext_resource type="PackedScene" uid="uid://bkxkhprff55lo" path="res://scripts/maze/door.tscn" id="3_fs281"]
+[ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/maze/dungeon_tileset.tres" id="3_apdos"]
+[ext_resource type="PackedScene" uid="uid://eqhaanrj48x2" path="res://scripts/maze/door.tscn" id="3_fs281"]
 [ext_resource type="PackedScene" uid="uid://dipgkvx662gda" path="res://scripts/torch/maze_torch.tscn" id="4_rn1gf"]
 
 [sub_resource type="Gradient" id="Gradient_qqx40"]
@@ -29,3 +29,4 @@ position = Vector2(8, -33)
 scale = Vector2(0.4, 0.4)
 
 [node name="Door" parent="." instance=ExtResource("3_fs281")]
+position = Vector2(240, -32)

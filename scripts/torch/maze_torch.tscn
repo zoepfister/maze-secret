@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dipgkvx662gda"]
 
-[ext_resource type="Texture2D" uid="uid://b5mqc7emuwhfk" path="res://assets/torch_default.png" id="1_mhgho"]
-[ext_resource type="Texture2D" uid="uid://cdmkgflcmhbsi" path="res://assets/torch.png" id="2_gtlcj"]
+[ext_resource type="Texture2D" uid="uid://b5mqc7emuwhfk" path="res://assets/lights/torch_default.png" id="1_mhgho"]
+[ext_resource type="Texture2D" uid="uid://cdmkgflcmhbsi" path="res://assets/lights/torch.png" id="2_gtlcj"]
 [ext_resource type="Script" path="res://scripts/torch/maze_torch.gd" id="2_iwtde"]
 [ext_resource type="Texture2D" uid="uid://5oivtbxn7d82" path="res://scripts/torch/torch_light_texture.tres" id="3_nean7"]
 
