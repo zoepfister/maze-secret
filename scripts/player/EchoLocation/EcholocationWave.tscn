@@ -1,14 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bcuxvfhfei6it"]
 
-[ext_resource type="Script" path="res://scripts/player/EchoLocation/echolocation_wave.gd" id="1_ptlki"]
+[ext_resource type="Script" path="res://scripts/player/EchoLocation/echolocation_waves.gd" id="1_o6y3f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gs2ug"]
 
 [node name="EcholocationWave" type="Area2D"]
 collision_layer = 9
 collision_mask = 9
-script = ExtResource("1_ptlki")
-arc_color = Color(0.94902, 0, 0, 0.85098)
+script = ExtResource("1_o6y3f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gs2ug")
