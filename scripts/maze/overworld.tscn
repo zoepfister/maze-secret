@@ -1,19 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvlaoqnucbvk4"]
+[gd_scene load_steps=3 format=3 uid="uid://bvlaoqnucbvk4"]
 
-[ext_resource type="PackedScene" uid="uid://2uynxmjxie46" path="res://scripts/maze/Entrance/entrance.tscn" id="1_2bkj2"]
-[ext_resource type="PackedScene" uid="uid://c4nvo8f5fpyxa" path="res://scripts/maze/First_secret_room/First_secret_room.tscn" id="2_fhaty"]
-[ext_resource type="PackedScene" uid="uid://c0y136254pmfc" path="res://scripts/maze/Room.tscn" id="3_rq11s"]
+[ext_resource type="PackedScene" uid="uid://c43j5sa0e8jal" path="res://scripts/torch/torch_room.tscn" id="3_lw87m"]
+[ext_resource type="PackedScene" uid="uid://bakxm8fuiu18n" path="res://scripts/torch/debug_torch.tscn" id="4_4q03a"]
 
 [node name="world" type="Node2D"]
 
-[node name="Entrance" parent="." instance=ExtResource("1_2bkj2")]
-position = Vector2(963, 191)
+[node name="TorchRoom" parent="." instance=ExtResource("3_lw87m")]
+position = Vector2(1155, 15)
 
-[node name="FirstSecretRoom" parent="." instance=ExtResource("2_fhaty")]
-position = Vector2(2499, 703)
-
-[node name="Room" parent="." instance=ExtResource("3_rq11s")]
-position = Vector2(217, 265)
-width = 30
-length = 45
-Top = false
+[node name="DebugScene" parent="." instance=ExtResource("4_4q03a")]
+position = Vector2(691, 175)
