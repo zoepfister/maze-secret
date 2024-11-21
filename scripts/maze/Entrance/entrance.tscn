@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=4 uid="uid://2uynxmjxie46"]
 
-[ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/dungeon_tileset.tres" id="1_wm7w8"]
+[ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/maze/dungeon_tileset.tres" id="1_wm7w8"]
 
 [node name="Entrance" type="Node2D"]
 

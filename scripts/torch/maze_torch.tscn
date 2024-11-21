@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://dipgkvx662gda"]
+
+[ext_resource type="Texture2D" uid="uid://b5mqc7emuwhfk" path="res://assets/lights/torch_default.png" id="1_mhgho"]
+[ext_resource type="Texture2D" uid="uid://cdmkgflcmhbsi" path="res://assets/lights/torch.png" id="2_gtlcj"]
+[ext_resource type="Script" path="res://scripts/torch/maze_torch.gd" id="2_iwtde"]
+[ext_resource type="Texture2D" uid="uid://5oivtbxn7d82" path="res://scripts/torch/torch_light_texture.tres" id="3_nean7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygq8h"]
+atlas = ExtResource("1_mhgho")
+region = Rect2(0, 0, 27, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vka6e"]
+atlas = ExtResource("2_gtlcj")
+region = Rect2(0, 0, 27, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mac0m"]
+atlas = ExtResource("2_gtlcj")
+region = Rect2(27, 0, 27, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cwbi"]
+atlas = ExtResource("2_gtlcj")
+region = Rect2(54, 0, 27, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrivx"]
+atlas = ExtResource("2_gtlcj")
+region = Rect2(81, 0, 27, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouhnj"]
+atlas = ExtResource("2_gtlcj")
+region = Rect2(108, 0, 27, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phmat"]
+atlas = ExtResource("2_gtlcj")
+region = Rect2(135, 0, 27, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snx8v"]
+atlas = ExtResource("2_gtlcj")
+region = Rect2(162, 0, 27, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_so46u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygq8h")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vka6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mac0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cwbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrivx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouhnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phmat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snx8v")
+}],
+"loop": true,
+"name": &"light_up",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2e44q"]
+radius = 21.0
+height = 88.0
+
+[node name="Torch" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_so46u")
+script = ExtResource("2_iwtde")
+
+[node name="TorchLight" type="PointLight2D" parent="."]
+enabled = false
+color = Color(0.909804, 0.788235, 0.266667, 1)
+energy = 2.5
+blend_mode = 2
+texture = ExtResource("3_nean7")
+texture_scale = 10.0
+
+[node name="TriggerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+position = Vector2(0, 35)
+shape = SubResource("CapsuleShape2D_2e44q")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
