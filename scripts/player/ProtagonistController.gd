@@ -1,11 +1,14 @@
 extends CharacterBody2D
+class_name Player
+
+@onready var player_camera: Camera2D = $PlayerCamera
 
 @export var acceleration = 1500  # Acceleration in pixels per second squared
 @export var max_speed = 300     # Maximum speed in pixels per second
 @export var friction = INF     # Deceleration when not moving in pixels per second squared= 300;
 
 # For debugging
-@export var has_torch : bool = false
+var has_torch : bool = false
 var animation_suffix : String = ""
 
 func _physics_process(delta: float) -> void:
@@ -14,7 +17,8 @@ func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 	direction.x = Input.get_axis("ui_left", "ui_right")
 	direction.y = Input.get_axis("ui_up", "ui_down")
-	$PlayerCamera.make_current()
+	player_camera = $PlayerCamera
+	player_camera.make_current()
 
  # Normalize direction to prevent faster diagonal movement
 	if direction.length() > 0:
@@ -55,6 +59,3 @@ func _physics_process(delta: float) -> void:
 	else:
 		# Character is idle
 		$AnimatedSprite2D.play("idle"+animation_suffix)
-
-func get_has_torch() -> bool:
-	return has_torch

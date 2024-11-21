@@ -878,9 +878,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Protagonist" type="CharacterBody2D"]
-z_index = 2
+[node name="Protagonist" type="CharacterBody2D" groups=["Player", "player"]]
+z_index = 1
 scale = Vector2(3, 3)
+collision_layer = 7
+collision_mask = 2
 script = ExtResource("1_egd0t")
 acceleration = 1000
 max_speed = 200
@@ -893,7 +895,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_vfxor")
 animation = &"walk_up_torch"
 
-[node name="PlayerCamera" type="Camera2D" parent="."]
+[node name="PlayerCamera" type="Camera2D" parent="." groups=["player_camera"]]
 zoom = Vector2(1.2, 1.2)
 limit_smoothed = true
 position_smoothing_enabled = true
@@ -907,7 +909,7 @@ editor_draw_limits = true
 editor_draw_drag_margin = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(0.815686, 0.776471, 0, 1)
+color = Color(0.910813, 0.786741, 0.266849, 1)
 energy = 2.0
 blend_mode = 2
 texture = ExtResource("16_s8lo7")
