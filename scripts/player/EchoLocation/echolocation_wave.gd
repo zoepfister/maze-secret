@@ -31,7 +31,9 @@ func _process(delta: float) -> void:
 	if touched_wall:
 		alpha -= fade_out_speed * delta
 
-func _on_body_entered(_body):
+func _on_body_entered(body):
 	touched_wall = true;
+	if body.has_method("on_echo_hit"):
+		body.on_echo_hit()
 	return 
 	
