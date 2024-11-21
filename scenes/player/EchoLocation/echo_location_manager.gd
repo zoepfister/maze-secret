@@ -1,6 +1,6 @@
 extends Node2D
 
-var circle_scene = preload("res://scripts/player/EchoLocation/EcholocationWave.tscn")
+var circle_scene = preload("res://scenes/player/EchoLocation/EcholocationWave.tscn")
 var active_circles = []
 var circle_speed = 100
 var spawn_interval = 0.5

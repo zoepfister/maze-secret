@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d17e7t344xwnl" path="res://assets/maze/door_closed.png" id="1_5nwlr"]
 [ext_resource type="Texture2D" uid="uid://cxhh57el0qiwo" path="res://assets/maze/door_opening.png" id="2_rrax2"]
-[ext_resource type="Script" path="res://scripts/torch/door.gd" id="3_8n40b"]
+[ext_resource type="Script" path="res://scenes/torch/door.gd" id="3_8n40b"]
 [ext_resource type="PackedScene" uid="uid://hbco22vtplww" path="res://interaction/interaction_area/InteractionArea.tscn" id="4_311g0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oynf5"]
