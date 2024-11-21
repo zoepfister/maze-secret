@@ -1,14 +1,11 @@
 extends Area2D
 
 var radius = 0
-var max_reflections = 1
-var reflection_count = 0
-var original_direction = Vector2.ZERO
-var direction = Vector2.ZERO
-var speed = Vector2(100, 100)
+var touched_wall = false;
+@export var alpha = .8
+@export var arc_color = Color(0.5, 0.8, 1.0, alpha)
+@export var fade_out_speed = .5
 
-# get player by name
-#@onready var player = get_tree().get_first_node_in_group("player")
 
 func _ready():
 	var collision_shape = CollisionShape2D.new()
@@ -19,26 +16,22 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 
 func _draw():
-	#draw_circle(Vector2.ZERO, radius, Color(0.5, 0.8, 1.0, 0.3))
-	draw_arc(Vector2.ZERO, radius, 0, 2 * PI, 32, Color(0.5, 0.8, 1.0, 0.5), 2.0)
+	# Draw main arc
+	arc_color.a = alpha
+	draw_arc(Vector2.ZERO, radius, 0, 4*PI, 32, arc_color, 3.0)
+	draw_arc(Vector2.ZERO, radius + 10, 0, 4*PI, 32, arc_color, 3.0)
+	draw_arc(Vector2.ZERO, radius + 20, 0, 4*PI, 32, arc_color, 3.0)
 
 func _physics_process(_delta):
+	$CollisionShape2D.shape.radius = radius + 20
 	queue_redraw()
-	$CollisionShape2D.shape.radius = radius
 
-func _on_body_entered(body):
-	#if body.is_in_group("walls"):
-	if reflection_count < max_reflections:
-		var space_state = get_world_2d().direct_space_state
-		var query = PhysicsRayQueryParameters2D.create(
-			position - speed.normalized() * 10,
-			position + speed.normalized() * 10,
-			collision_mask
-		)
-		var result = space_state.intersect_ray(query)
-		
-		if result:
-			speed = speed.bounce(result.normal)
-			reflection_count += 1
-	if body.has_method("on_echo_hit"):
-		body.on_echo_hit()
+func _process(delta: float) -> void:
+# 	gradually hide the circle (will get cleared by parent when below 0)
+	if touched_wall:
+		alpha -= fade_out_speed * delta
+
+func _on_body_entered(_body):
+	touched_wall = true;
+	return 
+	
