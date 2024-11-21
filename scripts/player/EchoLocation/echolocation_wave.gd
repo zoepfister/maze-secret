@@ -6,6 +6,7 @@ var touched_wall = false;
 @export var arc_color = Color(0.5, 0.8, 1.0, alpha)
 @export var fade_out_speed = .5
 @export var sound_effect = preload("res://assets/sounds/echolocate.wav")
+@export var echo_speed = 100.0
 
 var audio_player = AudioStreamPlayer.new()
 
@@ -33,6 +34,7 @@ func _draw():
 
 func _physics_process(_delta):
 	$CollisionShape2D.shape.radius = radius + 20
+	radius += echo_speed * _delta  
 	queue_redraw()
 
 func _process(delta: float) -> void:
