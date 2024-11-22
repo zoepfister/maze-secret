@@ -66,7 +66,7 @@ var tile_size : Vector2i
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	room_trigger = preload("res://scripts/maze/room_trigger.tscn")
+	room_trigger = preload("res://scenes/maze/room_trigger.tscn")
 	var tile_map : TileMapLayer = $TileMapLayer
 	tile_size = tile_map.tile_set.tile_size
 	# Clear before drawing
