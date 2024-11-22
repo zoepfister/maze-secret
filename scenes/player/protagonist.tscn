@@ -915,5 +915,5 @@ blend_mode = 2
 texture = ExtResource("16_s8lo7")
 texture_scale = 1.5
 
-[node name="EchoLocation" type="Node2D" parent="."]
+[node name="EchoLocationManager" type="Node2D" parent="."]
 script = ExtResource("17_4ychd")

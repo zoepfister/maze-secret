@@ -17,7 +17,7 @@ func _process(delta):
 	
 	for circle in active_circles:
 		circle.radius += circle_speed * delta
-		if circle.alpha <= -.5:
+		if circle.alpha <= -.3:
 			circle.queue_free()
 			active_circles.erase(circle)
 			print_debug("Circle removed")
