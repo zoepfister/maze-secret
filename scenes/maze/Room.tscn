@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=4 uid="uid://c0y136254pmfc"]
 
 [ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/maze/dungeon_tileset.tres" id="1_t77w2"]
-[ext_resource type="Script" path="res://scripts/maze/room_tilemaplayer.gd" id="2_ik07p"]
+[ext_resource type="Script" path="res://scenes/maze/room_tilemaplayer.gd" id="2_ik07p"]
 
 [node name="Room" type="Node2D"]
 script = ExtResource("2_ik07p")

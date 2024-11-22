@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgqenbwo7glm1"]
+
+[ext_resource type="PackedScene" uid="uid://bvlaoqnucbvk4" path="res://scenes/maze/overworld.tscn" id="1_hjjcj"]
+[ext_resource type="PackedScene" uid="uid://b4j1mbkq7q5yj" path="res://scenes/thread/thread.tscn" id="2_f7vfc"]
+[ext_resource type="PackedScene" uid="uid://cyy0clgfy3kpj" path="res://scenes/player/protagonist.tscn" id="3_0oj13"]
+
+[node name="Game" type="Node2D"]
+position = Vector2(72, 96)
+
+[node name="Overworld" parent="." instance=ExtResource("1_hjjcj")]
+position = Vector2(-545, -360)
+scale = Vector2(2, 2)
+
+[node name="Thread" parent="." node_paths=PackedStringArray("tracked") instance=ExtResource("2_f7vfc")]
+z_index = 1
+tracked = NodePath("../Protagonist")
+create_point_treshold = 50.0
+collision_shape_x = 1.0
+offset = 0.3
+
+[node name="Protagonist" parent="." instance=ExtResource("3_0oj13")]

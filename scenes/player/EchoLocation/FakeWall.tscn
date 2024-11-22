@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=4 uid="uid://devhj8ta6ycbb"]
+
+[ext_resource type="TileSet" uid="uid://do6acxphm6u6n" path="res://assets/fake_walls.tres" id="1_p2cu1"]
+[ext_resource type="Script" path="res://scenes/player/EchoLocation/fake_wall.gd" id="2_3bp6y"]
+
+[node name="FakeWalls" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AADv/+f/AgACAAAAAADv/+j/AgACAAAAAADw/+j/AgACAAAAAADw/+f/AgACAAAAAADw/+b/AgACAAAAAADx/+b/AgACAAAAAADy/+b/AgACAAAAAADz/+b/AgACAAAAAADz/+f/AgACAAAAAADz/+j/AgACAAAAAADy/+j/AgACAAAAAADx/+j/AgACAAAAAADx/+f/AgACAAAAAADy/+f/AgACAAAAAAA=")
+tile_set = ExtResource("1_p2cu1")
+script = ExtResource("2_3bp6y")

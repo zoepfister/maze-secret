@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvlaoqnucbvk4"]
 
-[ext_resource type="PackedScene" uid="uid://c43j5sa0e8jal" path="res://scripts/torch/torch_room.tscn" id="3_lw87m"]
-[ext_resource type="PackedScene" uid="uid://bakxm8fuiu18n" path="res://scripts/torch/debug_torch.tscn" id="4_4q03a"]
+[ext_resource type="PackedScene" uid="uid://c43j5sa0e8jal" path="res://scenes/torch/torch_room.tscn" id="3_lw87m"]
+[ext_resource type="PackedScene" uid="uid://bakxm8fuiu18n" path="res://scenes/torch/debug_torch.tscn" id="4_4q03a"]
 
 [node name="world" type="Node2D"]
 

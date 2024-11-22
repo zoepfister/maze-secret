@@ -1,6 +1,6 @@
-[gd_scene load_steps=131 format=3 uid="uid://cyy0clgfy3kpj"]
+[gd_scene load_steps=132 format=3 uid="uid://cyy0clgfy3kpj"]
 
-[ext_resource type="Script" path="res://scripts/player/ProtagonistController.gd" id="1_egd0t"]
+[ext_resource type="Script" path="res://scenes/player/ProtagonistController.gd" id="1_egd0t"]
 [ext_resource type="Texture2D" uid="uid://bg85bmmhrscwl" path="res://assets/protagonist/Idle/Idle_Down.png" id="2_ei857"]
 [ext_resource type="Texture2D" uid="uid://cnhg3kdmlxjok" path="res://assets/protagonist/Idle/Idle_with_torch.png" id="3_8odkn"]
 [ext_resource type="Texture2D" uid="uid://uy7t4b7tdw7a" path="res://assets/protagonist/Walk/walk_Down.png" id="4_i6cky"]
@@ -15,7 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://67ap0m7uu7i3" path="res://assets/protagonist/Walk/walk_up_right_torch.png" id="13_t0ow0"]
 [ext_resource type="Texture2D" uid="uid://cdti2mao0unoj" path="res://assets/protagonist/Walk/walk_Up.png" id="14_a1sa1"]
 [ext_resource type="Texture2D" uid="uid://vunncxhaehk5" path="res://assets/protagonist/Walk/walk_up_torch.png" id="15_vhatn"]
-[ext_resource type="Texture2D" uid="uid://5oivtbxn7d82" path="res://scripts/torch/torch_light_texture.tres" id="16_s8lo7"]
+[ext_resource type="Texture2D" uid="uid://5oivtbxn7d82" path="res://scenes/torch/torch_light_texture.tres" id="16_s8lo7"]
+[ext_resource type="Script" path="res://scenes/player/EchoLocation/echo_location_manager.gd" id="17_4ychd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0s2ov"]
 radius = 7.0
@@ -913,3 +914,6 @@ energy = 2.0
 blend_mode = 2
 texture = ExtResource("16_s8lo7")
 texture_scale = 1.5
+
+[node name="EchoLocationManager" type="Node2D" parent="."]
+script = ExtResource("17_4ychd")
