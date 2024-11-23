@@ -4,6 +4,7 @@ extends Node
 @onready var timer: Timer = $TextBoxTimer
 
 @export var text_box_lifespan: float = 3.0
+@export var text_box_fadeout_seconds = 0.8
 
 var dialog_lines: Array[String] = []
 var line_index: int = 0
@@ -36,6 +37,12 @@ func _on_text_box_finished_displaying():
 	timer.start(text_box_lifespan)
 
 func _on_text_box_timer_timeout() -> void:
+	var tween = create_tween()
+	tween.tween_property(text_box, "modulate:a", 0.0, text_box_fadeout_seconds)
+	tween.tween_callback(tween_callback)
+
+# Callback after the text box fade-out animation
+func tween_callback():
 	text_box.queue_free()
 	line_index += 1
 	if line_index >= dialog_lines.size():

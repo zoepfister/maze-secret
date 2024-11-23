@@ -23,7 +23,8 @@ func set_size(size: Vector2) -> void :
 func _ready() -> void:
 	camera_trigger = $CameraTrigger
 	initial_zoom = player_camera.zoom
-	solver.room_solved.connect(_on_room_solved)
+	if solver != null:
+		solver.room_solved.connect(_on_room_solved)
 	
 func _on_room_solved():
 	is_room_solved = true
