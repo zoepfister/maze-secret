@@ -11,11 +11,10 @@ position = Vector2(72, 96)
 position = Vector2(-545, -360)
 scale = Vector2(2, 2)
 
-[node name="Thread" parent="." node_paths=PackedStringArray("tracked") instance=ExtResource("2_f7vfc")]
-z_index = 1
+[node name="Protagonist" parent="." instance=ExtResource("3_0oj13")]
+position = Vector2(190, 6)
+scale = Vector2(3, 3)
+
+[node name="Line2D" parent="." node_paths=PackedStringArray("tracked") instance=ExtResource("2_f7vfc")]
 tracked = NodePath("../Protagonist")
 create_point_treshold = 50.0
-collision_shape_x = 1.0
-offset = 0.3
-
-[node name="Protagonist" parent="." instance=ExtResource("3_0oj13")]

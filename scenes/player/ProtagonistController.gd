@@ -7,7 +7,6 @@ class_name Player
 @export var max_speed = 300     # Maximum speed in pixels per second
 @export var friction = INF     # Deceleration when not moving in pixels per second squared= 300;
 
-# For debugging
 var has_torch : bool = false
 var animation_suffix : String = ""
 

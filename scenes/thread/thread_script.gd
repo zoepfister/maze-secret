@@ -16,7 +16,6 @@ var collision_shape : CollisionShape2D
 func _ready() -> void:
 	collision_shape = $Area2D/CollisionShape2D
 	# initialize the line with two point. The start will be fixed; the end will follow the tracked object
-	global_position = tracked.global_position
 	points = [tracked.position, tracked.position]
 
 func _process(delta: float) -> void:
