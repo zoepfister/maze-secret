@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cdmkgflcmhbsi" path="res://assets/lights/torch.png" id="2_gtlcj"]
 [ext_resource type="Script" path="res://scenes/torch/maze_torch.gd" id="2_iwtde"]
 [ext_resource type="Texture2D" uid="uid://5oivtbxn7d82" path="res://scenes/torch/torch_light_texture.tres" id="3_nean7"]
+[ext_resource type="PackedScene" uid="uid://hbco22vtplww" path="res://interaction/interaction_area/InteractionArea.tscn" id="5_6f1rh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygq8h"]
 atlas = ExtResource("1_mhgho")
@@ -74,10 +75,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2e44q"]
-radius = 21.0
-height = 88.0
-
 [node name="Torch" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_so46u")
 script = ExtResource("2_iwtde")
@@ -90,12 +87,8 @@ blend_mode = 2
 texture = ExtResource("3_nean7")
 texture_scale = 10.0
 
-[node name="TriggerArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
-position = Vector2(0, 35)
-shape = SubResource("CapsuleShape2D_2e44q")
-
 [node name="Node2D" type="Node2D" parent="."]
 
-[connection signal="body_entered" from="TriggerArea" to="." method="_on_trigger_area_body_entered"]
+[node name="InteractionArea" parent="." instance=ExtResource("5_6f1rh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]

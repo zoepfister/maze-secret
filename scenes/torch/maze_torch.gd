@@ -1,27 +1,33 @@
 extends AnimatedSprite2D
 
 @onready var player: Player = get_tree().get_first_node_in_group("player")
-
-var animation_name : String = "default"
-var light : PointLight2D
-var trigger : Area2D
+@onready var interaction_area: InteractionArea = $InteractionArea
+@onready var light : PointLight2D = $TorchLight
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# By default, torch light is disabled
-	light = $TorchLight
 	light.enabled = false
-	
-	trigger = $TriggerArea
+	animation = "default"
+	interaction_area.interact = Callable(self, "_on_interact")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	play(animation_name)
+	play()
 
-func enable_light() -> void:
+func _light_up_torch() -> void:
 	light.enabled = true
-	animation_name = "light_up"
-
-func _on_trigger_area_body_entered(body: Node2D) -> void:
-	if player.has_torch:
-		enable_light()
+	animation = "light_up"
+	
+func _blow_off_torch():
+	light.enabled = false
+	animation = "default"
+	
+func _on_interact(body: Node2D) -> void:
+	if !light.enabled:
+		if player.has_torch:
+			_light_up_torch()
+			interaction_area.action_name = "Blow off"
+	else:
+		_blow_off_torch()
+		interaction_area.action_name = "Light up"
