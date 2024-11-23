@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj3agsimucir0"]
+
+[ext_resource type="PackedScene" uid="uid://cyy0clgfy3kpj" path="res://scenes/player/protagonist.tscn" id="1_mhnqj"]
+[ext_resource type="Script" path="res://dialog/debug/hint_dialogs.gd" id="2_xhtwr"]
+
+[node name="Debug" type="Node2D"]
+
+[node name="Protagonist" parent="." instance=ExtResource("1_mhnqj")]
+
+[node name="HintDialogs" type="Node" parent="Protagonist"]
+script = ExtResource("2_xhtwr")
