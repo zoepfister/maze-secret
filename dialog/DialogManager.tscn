@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://g4vxogfbfbpx"]
+[gd_scene load_steps=2 format=3 uid="uid://g4vxogfbfbpx"]
+
+[ext_resource type="Script" path="res://dialog/DialogManager.gd" id="1_eojdr"]
 
 [node name="DialogManager" type="Node2D"]
+script = ExtResource("1_eojdr")
+
+[node name="TextBoxTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="TextBoxTimer" to="." method="_on_text_box_timer_timeout"]
