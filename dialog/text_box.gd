@@ -7,6 +7,8 @@ class_name TextBox
 @export_group("TextBox settings")
 @export var max_width: int = 256
 @export var text_speed: float = 0.03
+
+# values based on player sprite
 @export var y_offset: float = 40.0
 @export var x_offset: float = 24.0
 @export_group("")
@@ -16,9 +18,6 @@ var char_index: int = 0
 var tracked_node: Node2D
 
 signal finished_displaying()
-
-#func _ready() -> void:
-	#global_position = _get_adjusted_global_position()
 
 func _process(delta: float) -> void:
 	global_position = _get_adjusted_global_position()
