@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cdmkgflcmhbsi" path="res://assets/lights/torch.png" id="3_b46sx"]
 [ext_resource type="Script" path="res://scenes/torch/torch.gd" id="4_req2m"]
 [ext_resource type="PackedScene" uid="uid://hbco22vtplww" path="res://interaction/interaction_area/InteractionArea.tscn" id="5_s0gl0"]
-[ext_resource type="PackedScene" uid="uid://eqhaanrj48x2" path="res://scenes/maze/door.tscn" id="6_ccqwa"]
+[ext_resource type="PackedScene" uid="uid://eqhaanrj48x2" path="res://scenes/maze/front_door.tscn" id="6_ccqwa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rai6h"]
 atlas = ExtResource("3_b46sx")

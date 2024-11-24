@@ -11,6 +11,8 @@ var solution_torches: Array[MazeTorch] = []
 
 var player_solution: Array[int]
 
+signal solved
+
 func _ready() -> void:
 	solution_torches = [
 		$SolutionTorch1,
@@ -63,7 +65,7 @@ func check_solution():
 	for i in range(0, 3):
 		if player_solution[i] > player_solution[i + 1]:
 			return
-	DialogManager.start_dialog(get_tree().get_first_node_in_group("player"), ["Correct!"])
+	solved.emit()
 
 func _on_cycle_timeout() -> void:
 	_show_torch()
