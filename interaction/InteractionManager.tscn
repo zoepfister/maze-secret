@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://msdmvx2vbsi7"]
+[gd_scene load_steps=4 format=3 uid="uid://msdmvx2vbsi7"]
 
 [ext_resource type="Script" path="res://interaction/interaction_manager.gd" id="1_n6j70"]
+[ext_resource type="FontFile" uid="uid://bfys7bsj0seti" path="res://assets/dialogs/m6x11plus.ttf" id="2_63cli"]
 
 [sub_resource type="GDScript" id="GDScript_jbql1"]
 script/source = "extends Label
@@ -28,6 +29,9 @@ offset_left = -56.0
 offset_right = 56.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.991164, 0.991164, 0.991164, 1)
+theme_override_fonts/font = ExtResource("2_63cli")
+theme_override_font_sizes/font_size = 30
 text = "[E] To interact "
 horizontal_alignment = 1
 vertical_alignment = 1
