@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=4 uid="uid://ilivrlo5o667"]
+
+[ext_resource type="PackedScene" uid="uid://cyy0clgfy3kpj" path="res://scenes/player/protagonist.tscn" id="1_mhnqj"]
+[ext_resource type="PackedScene" uid="uid://dbg2t7lsyr8tl" path="res://scenes/maze/room_trigger.tscn" id="2_alnqp"]
+[ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/maze/dungeon_tileset.tres" id="3_x01kl"]
+
+[node name="Debug" type="Node2D"]
+
+[node name="Protagonist" parent="." instance=ExtResource("1_mhnqj")]
+
+[node name="HintRoom" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="Area2D" parent="HintRoom" instance=ExtResource("2_alnqp")]
+z_index = 1
+position = Vector2(0.5, -105)
+scale = Vector2(18.32, 0.86)
+hints = Array[String](["Test", "Another, longer test"])
+
+[node name="TileMapLayer" type="TileMapLayer" parent="HintRoom"]
+tile_map_data = PackedByteArray("AAD8//3/AgAHAAEAAAD9//3/AgAHAAEAAAD+//3/AgAHAAEAAAD///3/AgAHAAEAAAAAAP3/AgAHAAEAAAABAP3/AgAHAAEAAAACAP3/AgAHAAEAAAADAP3/AgAHAAEAAAADAPz/AgAHAAEAAAADAPv/AgAHAAEAAAADAPr/AgAHAAEAAAADAPn/AgAHAAEAAAD8//z/AgAHAAEAAAD8//v/AgAHAAEAAAD8//r/AgAHAAEAAAD8//n/AgAHAAEAAAD8//j/AgAHAAEAAAD8//f/AgAHAAEAAAD8//b/AgAHAAEAAAD8//X/AgAHAAEAAAD9//X/AgAHAAEAAAD+//X/AgAHAAEAAAD///X/AgAHAAEAAAAAAPX/AgAHAAEAAAABAPX/AgAHAAEAAAACAPX/AgAHAAEAAAADAPX/AgAHAAEAAAADAPb/AgAHAAEAAAADAPf/AgAHAAEAAAADAPj/AgAHAAEAAAD9//b/AgAHAAEAAAD+//b/AgAHAAEAAAD///b/AgAHAAEAAAAAAPb/AgAHAAEAAAABAPb/AgAHAAEAAAACAPb/AgAHAAEAAAACAPf/AgAHAAEAAAABAPf/AgAHAAEAAAAAAPf/AgAHAAEAAAD///f/AgAHAAEAAAD+//f/AgAHAAEAAAD9//f/AgAHAAEAAAD9//j/AgAHAAEAAAD+//j/AgAHAAEAAAD///j/AgAHAAEAAAAAAPj/AgAHAAEAAAABAPj/AgAHAAEAAAACAPj/AgAHAAEAAAACAPn/AgAHAAEAAAABAPn/AgAHAAEAAAAAAPn/AgAHAAEAAAD///n/AgAHAAEAAAD+//n/AgAHAAEAAAD9//n/AgAHAAEAAAD9//r/AgAHAAEAAAD+//r/AgAHAAEAAAD///r/AgAHAAEAAAAAAPr/AgAHAAEAAAABAPr/AgAHAAEAAAACAPr/AgAHAAEAAAACAPv/AgAHAAEAAAABAPv/AgAHAAEAAAAAAPv/AgAHAAEAAAD///v/AgAHAAEAAAD+//v/AgAHAAEAAAD9//v/AgAHAAEAAAD9//z/AgAHAAEAAAD+//z/AgAHAAEAAAD///z/AgAHAAEAAAAAAPz/AgAHAAEAAAABAPz/AgAHAAEAAAACAPz/AgAHAAEAAAA=")
+tile_set = ExtResource("3_x01kl")
