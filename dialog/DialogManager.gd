@@ -17,7 +17,8 @@ var can_advance_line = false
 func start_dialog(tracked_node: Node2D, lines: Array[String]):
 	if is_dialog_active:
 		return
-		
+	if lines.size() == 0:
+		return
 	dialog_lines = lines
 	tracked = tracked_node
 	
