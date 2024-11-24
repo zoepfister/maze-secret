@@ -8,11 +8,11 @@
 position = Vector2(72, 96)
 
 [node name="Overworld" parent="." instance=ExtResource("1_hjjcj")]
-position = Vector2(-545, -360)
+position = Vector2(-1761, -360)
 scale = Vector2(2, 2)
 
 [node name="Protagonist" parent="." instance=ExtResource("3_0oj13")]
-position = Vector2(190, 6)
+position = Vector2(183, 33)
 scale = Vector2(3, 3)
 
 [node name="Line2D" parent="." node_paths=PackedStringArray("tracked") instance=ExtResource("2_f7vfc")]

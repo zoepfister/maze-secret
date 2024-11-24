@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvlaoqnucbvk4"]
 
-[ext_resource type="PackedScene" uid="uid://c43j5sa0e8jal" path="res://scenes/torch/torch_room.tscn" id="3_lw87m"]
-[ext_resource type="PackedScene" uid="uid://bakxm8fuiu18n" path="res://scenes/torch/debug_torch.tscn" id="4_4q03a"]
+[ext_resource type="PackedScene" uid="uid://c43j5sa0e8jal" path="res://scenes/torch/room/torch_room.tscn" id="3_lw87m"]
+[ext_resource type="PackedScene" uid="uid://bakxm8fuiu18n" path="res://scenes/torch/puzzle/puzzle.tscn" id="4_4q03a"]
 
 [node name="world" type="Node2D"]
 
 [node name="TorchRoom" parent="." instance=ExtResource("3_lw87m")]
 position = Vector2(1155, 15)
 
-[node name="DebugScene" parent="." instance=ExtResource("4_4q03a")]
-position = Vector2(691, 175)
+[node name="TorchPuzzle" parent="." instance=ExtResource("4_4q03a")]
+position = Vector2(1443, -352)
