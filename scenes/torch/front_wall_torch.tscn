@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dipgkvx662gda"]
+[gd_scene load_steps=16 format=3 uid="uid://dipgkvx662gda"]
 
 [ext_resource type="Texture2D" uid="uid://b5mqc7emuwhfk" path="res://assets/lights/torch_default.png" id="1_mhgho"]
 [ext_resource type="Texture2D" uid="uid://cdmkgflcmhbsi" path="res://assets/lights/torch.png" id="2_gtlcj"]
 [ext_resource type="Script" path="res://scenes/torch/maze_torch.gd" id="2_iwtde"]
-[ext_resource type="Texture2D" uid="uid://5oivtbxn7d82" path="res://scenes/torch/torch_light_texture.tres" id="3_nean7"]
+[ext_resource type="Texture2D" uid="uid://5oivtbxn7d82" path="res://assets/lights/torch_light_texture.tres" id="3_nean7"]
 [ext_resource type="PackedScene" uid="uid://hbco22vtplww" path="res://interaction/interaction_area/InteractionArea.tscn" id="5_6f1rh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygq8h"]
@@ -75,6 +75,10 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w6d5f"]
+radius = 17.0
+height = 46.0
+
 [node name="Torch" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_so46u")
 script = ExtResource("2_iwtde")
@@ -92,3 +96,6 @@ texture_scale = 10.0
 [node name="InteractionArea" parent="." instance=ExtResource("5_6f1rh")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 40)
+shape = SubResource("CapsuleShape2D_w6d5f")
+debug_color = Color(0.792157, 0.207843, 0.294118, 0.419608)
