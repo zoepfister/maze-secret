@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://c56p5ex1xtmc5" path="res://scenes/torch/right_wall_torch.tscn" id="4_px0jg"]
 [ext_resource type="Script" path="res://scenes/torch/puzzle/sneak_peek.gd" id="6_jhex7"]
 [ext_resource type="PackedScene" uid="uid://dbg2t7lsyr8tl" path="res://scenes/maze/room_trigger.tscn" id="7_b7c4j"]
-[ext_resource type="PackedScene" uid="uid://utta5mr3gvbq" path="res://scenes/maze/left_door.tscn" id="8_5ykfd"]
-[ext_resource type="Script" path="res://scenes/maze/door_with_logic.gd" id="9_0xgkk"]
+[ext_resource type="PackedScene" uid="uid://utta5mr3gvbq" path="res://scenes/maze/Door/left_door.tscn" id="8_5ykfd"]
+[ext_resource type="Script" path="res://scenes/maze/Door/door_with_logic.gd" id="9_0xgkk"]
 
 [sub_resource type="Gradient" id="Gradient_qqx40"]
 offsets = PackedFloat32Array(0)
@@ -42,7 +42,7 @@ scale = Vector2(0.5, 0.5)
 metadata/index = 1
 
 [node name="Torch2" parent="." instance=ExtResource("3_x0yqh")]
-position = Vector2(-457, 100)
+position = Vector2(-462, 100)
 scale = Vector2(0.5, 0.5)
 metadata/index = 2
 
@@ -52,7 +52,7 @@ scale = Vector2(0.5, 0.5)
 metadata/index = 3
 
 [node name="Torch4" parent="." instance=ExtResource("3_x0yqh")]
-position = Vector2(-457, -100)
+position = Vector2(-462, -100)
 scale = Vector2(0.5, 0.5)
 metadata/index = 4
 
@@ -61,7 +61,7 @@ position = Vector2(167, -189)
 scale = Vector2(0.5, 0.5)
 
 [node name="SolutionTorch2" parent="." instance=ExtResource("4_px0jg")]
-position = Vector2(411, 150)
+position = Vector2(415, 150)
 scale = Vector2(0.5, 0.5)
 
 [node name="SolutionTorch3" parent="." instance=ExtResource("2_ls8kr")]
@@ -69,7 +69,7 @@ position = Vector2(359, -190)
 scale = Vector2(0.5, 0.5)
 
 [node name="SolutionTorch4" parent="." instance=ExtResource("4_px0jg")]
-position = Vector2(411, -50)
+position = Vector2(415, -50)
 scale = Vector2(0.5, 0.5)
 
 [node name="SolutionTorchTimer" type="Timer" parent="."]
@@ -90,7 +90,7 @@ scale = Vector2(67.2207, 2.29103)
 one_shot = true
 
 [node name="Door" parent="." node_paths=PackedStringArray("opener") instance=ExtResource("8_5ykfd")]
-position = Vector2(-460, 0)
+position = Vector2(-490, 0)
 scale = Vector2(2, 2)
 script = ExtResource("9_0xgkk")
 opener = NodePath("..")
