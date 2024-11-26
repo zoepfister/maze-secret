@@ -6,43 +6,43 @@
 [ext_resource type="Texture2D" uid="uid://5oivtbxn7d82" path="res://assets/lights/torch_light_texture.tres" id="4_2hujr"]
 [ext_resource type="PackedScene" uid="uid://hbco22vtplww" path="res://interaction/interaction_area/InteractionArea.tscn" id="5_ijkpu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3upm4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2weds"]
 atlas = ExtResource("1_16u3m")
-region = Rect2(0, 0, 27, 54)
+region = Rect2(0, 0, 54, 54)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qeoei"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o6v5"]
 atlas = ExtResource("2_gseg1")
-region = Rect2(0, 0, 27, 54)
+region = Rect2(0, 0, 54, 54)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sulyv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gcup"]
 atlas = ExtResource("2_gseg1")
-region = Rect2(27, 0, 27, 54)
+region = Rect2(54, 0, 54, 54)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sbwsn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfhoy"]
 atlas = ExtResource("2_gseg1")
-region = Rect2(54, 0, 27, 54)
+region = Rect2(108, 0, 54, 54)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xjh7j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbb1e"]
 atlas = ExtResource("2_gseg1")
-region = Rect2(81, 0, 27, 54)
+region = Rect2(162, 0, 54, 54)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qbljm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pupuk"]
 atlas = ExtResource("2_gseg1")
-region = Rect2(108, 0, 27, 54)
+region = Rect2(216, 0, 54, 54)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yfhnw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqwkj"]
 atlas = ExtResource("2_gseg1")
-region = Rect2(135, 0, 27, 54)
+region = Rect2(270, 0, 54, 54)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sudi2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4n1u"]
 atlas = ExtResource("2_gseg1")
-region = Rect2(162, 0, 27, 54)
+region = Rect2(324, 0, 54, 54)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_so46u"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3upm4")
+"texture": SubResource("AtlasTexture_2weds")
 }],
 "loop": false,
 "name": &"default",
@@ -50,25 +50,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qeoei")
+"texture": SubResource("AtlasTexture_8o6v5")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sulyv")
+"texture": SubResource("AtlasTexture_6gcup")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sbwsn")
+"texture": SubResource("AtlasTexture_yfhoy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xjh7j")
+"texture": SubResource("AtlasTexture_sbb1e")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qbljm")
+"texture": SubResource("AtlasTexture_pupuk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yfhnw")
+"texture": SubResource("AtlasTexture_sqwkj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sudi2")
+"texture": SubResource("AtlasTexture_m4n1u")
 }],
 "loop": true,
 "name": &"light_up",
@@ -80,9 +80,7 @@ radius = 14.0
 height = 58.0
 
 [node name="Torch" type="AnimatedSprite2D"]
-position = Vector2(-13.5, 0)
 sprite_frames = SubResource("SpriteFrames_so46u")
-animation = &"light_up"
 script = ExtResource("3_m8blr")
 
 [node name="TorchLight" type="PointLight2D" parent="."]
