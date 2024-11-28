@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://clilqpiffea0"]
+
+[ext_resource type="Script" path="res://scenes/echo/hide-fake-wall.gd" id="1_qdlf7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxgnd"]
+size = Vector2(128, 26)
+
+[node name="TileMapHider" type="Area2D"]
+script = ExtResource("1_qdlf7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-64, 29)
+shape = SubResource("RectangleShape2D_mxgnd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
