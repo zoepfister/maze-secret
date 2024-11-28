@@ -8,6 +8,7 @@ var time_elapsed_since_hit = 0
 
 func on_echo_hit():
 	print_debug("Fake Wall Hit")
+	self.tile_set.set_occlusion_layer_light_mask(0, 2)
 	# 	make tilemap layer glow
 	touched_wall = true
 	

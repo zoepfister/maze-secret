@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=20 format=3 uid="uid://7ogp8m8nlbc1"]
+[gd_resource type="TileSet" load_steps=28 format=3 uid="uid://7ogp8m8nlbc1"]
 
 [ext_resource type="Texture2D" uid="uid://bfnvggsve8sue" path="res://assets/maze/Dungeon_Tileset.png" id="1_tgfnd"]
 
@@ -29,6 +29,9 @@ tile_data = PackedInt32Array(0, 262146, 0, 65536, 65538, 0, 131072, 65538, 0, 19
 [sub_resource type="TileMapPattern" id="TileMapPattern_hssf8"]
 tile_data = PackedInt32Array(0, 262146, 1610612738, 65536, 524290, 1610612738, 131072, 458754, 1610612736, 196608, 65538, 1610612738, 262144, 2, 1610612738, 1, 262146, 1610612738, 65537, 393218, 1610612736, 131073, 589826, 1610612737, 196609, 65538, 1610612738, 262145, 2, 1610612737, 2, 262146, 1610612738, 65538, 589826, 1610612736, 131074, 458754, 1610612737, 196610, 65538, 1610612738, 262146, 2, 1610612737, 3, 262146, 1610612738, 65539, 458754, 1610612738, 131075, 524290, 1610612738, 196611, 65538, 1610612738, 262147, 2, 1610612738, 4, 262146, 1610612738, 65540, 393218, 1610612738, 131076, 524290, 1610612736, 196612, 65538, 1610612738, 262148, 2, 1610612738, 5, 262146, 1610612738, 65541, 393218, 1610612738, 131077, 393218, 1610612736, 196613, 65538, 1610612738, 262149, 2, 1610612738, 6, 262146, 1610612738, 65542, 393218, 1610612736, 131078, 393218, 1610612738, 196614, 65538, 1610612738, 262150, 2, 1610612737, 7, 262146, 1610612738, 65543, 458754, 1610612736, 131079, 524290, 1610612738, 196615, 65538, 1610612738, 262151, 2, 1610612737, 8, 262146, 1610612738, 65544, 524290, 1610612736, 131080, 589826, 1610612736, 196616, 65538, 1610612738, 262152, 2, 1610612737, 9, 262146, 1610612738, 65545, 458754, 1610612738, 131081, 393218, 1610612736, 196617, 65538, 1610612738, 262153, 2, 1610612739, 10, 262146, 1610612738, 65546, 458754, 1610612736, 131082, 393218, 1610612736, 196618, 65538, 1610612738, 262154, 65538, 4, 11, 262146, 1610612738, 65547, 458754, 1610612737, 131083, 393218, 1610612737, 196619, 65538, 1610612738, 262155, 65538, 4, 12, 262146, 1610612738, 65548, 458754, 1610612738, 131084, 393218, 1610612738, 196620, 65538, 1610612738, 262156, 196610, 4, 13, 262146, 1610612738, 65549, 458754, 1610612736, 131085, 393218, 1610612736, 196621, 65538, 1610612738, 262157, 196610, 4, 14, 262146, 1610612738, 65550, 458754, 1610612737, 131086, 393218, 1610612737, 196622, 65538, 1610612738, 262158, 2, 1342177285, 15, 393218, 1, 65551, 524290, 1, 131087, 393218, 0, 196623, 589826, 1, 16, 589826, 1, 65552, 524290, 2, 131088, 458754, 0, 196624, 393218, 1, 17, 524290, 1, 65553, 393218, 0, 131089, 393218, 2, 196625, 524290, 1)
 
+[sub_resource type="TileMapPattern" id="TileMapPattern_2jx2a"]
+tile_data = PackedInt32Array(0, 65538, 0, 65536, 131074, 1, 131072, 393218, 1, 196608, 458754, 0, 262144, 196610, 3, 327680, 131074, 4, 1, 262146, 0, 65537, 131074, 1, 131073, 393218, 0, 196609, 393218, 0, 262145, 131074, 3, 327681, 65538, 4, 2, 196610, 0, 65538, 131074, 1, 131074, 393218, 1, 196610, 524290, 0, 262146, 131074, 3, 327682, 262146, 4, 3, 196610, 0, 65539, 131074, 1, 131075, 458754, 2, 196611, 589826, 1, 262147, 196610, 3, 327683, 262146, 4, 4, 262146, 0, 65540, 131074, 1, 131076, 393218, 1, 196612, 589826, 0, 262148, 196610, 3, 327684, 262146, 4, 5, 262146, 0, 65541, 131074, 1, 131077, 393218, 1, 196613, 589826, 0, 262149, 196610, 3, 327685, 196610, 4, 6, 262146, 0, 65542, 196610, 1, 131078, 393218, 2, 196614, 589826, 1, 262150, 131074, 3, 327686, 65538, 4)
+
 [sub_resource type="TileMapPattern" id="TileMapPattern_yiuwu"]
 tile_data = PackedInt32Array(0, 65538, 0, 65536, 131074, 1, 131072, 393218, 1, 196608, 458754, 0, 262144, 196610, 3, 327680, 131074, 4, 1, 262146, 0, 65537, 131074, 1, 131073, 393218, 0, 196609, 393218, 0, 262145, 131074, 3, 327681, 65538, 4, 2, 196610, 0, 65538, 131074, 1, 131074, 393218, 1, 196610, 524290, 0, 262146, 131074, 3, 327682, 262146, 4, 3, 196610, 0, 65539, 131074, 1, 131075, 458754, 2, 196611, 589826, 1, 262147, 196610, 3, 327683, 262146, 4, 4, 262146, 0, 65540, 131074, 1, 131076, 393218, 1, 196612, 589826, 0, 262148, 196610, 3, 327684, 262146, 4, 5, 262146, 0, 65541, 131074, 1, 131077, 393218, 1, 196613, 589826, 0, 262149, 196610, 3, 327685, 196610, 4, 6, 262146, 0, 65542, 196610, 1, 131078, 393218, 2, 196614, 589826, 1, 262150, 131074, 3, 327686, 65538, 4, 7, 262146, 0, 65543, 196610, 1, 131079, 589826, 1, 196615, 393218, 0, 262151, 196610, 3, 327687, 131074, 4, 8, 262146, 0, 65544, 196610, 1, 131080, 458754, 0, 196616, 524290, 1, 262152, 196610, 3, 327688, 65538, 4, 9, 65538, 0, 65545, 131074, 1, 131081, 393218, 1, 196617, 524290, 2, 262153, 196610, 3, 327689, 196610, 4, 10, 131074, 0, 65546, 131074, 1, 131082, 458754, 0, 196618, 589826, 1, 262154, 196610, 3, 327690, 65538, 4, 11, 131074, 0, 65547, 131074, 1, 131083, 393218, 0, 196619, 589826, 2, 262155, 131074, 3, 327691, 262146, 4, 12, 196610, 0, 65548, 196610, 1, 131084, 589826, 1, 196620, 524290, 1, 262156, 196610, 3, 327692, 65538, 4, 13, 131074, 0, 65549, 131074, 1, 131085, 393218, 0, 196621, 393218, 0, 262157, 131074, 3, 327693, 131074, 4, 14, 65538, 0, 65550, 196610, 1, 131086, 524290, 0, 196622, 524290, 1, 262158, 196610, 3, 327694, 65538, 4)
 
@@ -53,11 +56,33 @@ tile_data = PackedInt32Array(0, 262146, 0, 65536, 131074, 1, 131072, 589826, 2, 
 [sub_resource type="TileMapPattern" id="TileMapPattern_6fmu6"]
 tile_data = PackedInt32Array(131072, 327682, 1610612739, 196608, 262146, 1610612738, 262144, 458754, 1610612737, 327680, 524290, 1610612738, 393216, 65538, 1610612738, 458752, 2, 1610612739, 131073, 327682, 1610612739, 196609, 262146, 1610612738, 262145, 393218, 1610612737, 327681, 589826, 1610612737, 393217, 65538, 1610612738, 458753, 2, 1610612737, 2, 2, 2, 65538, 2, 0, 131074, 327682, 1342177285, 196610, 262146, 1610612738, 262146, 196610, 1610612738, 327682, 589826, 1610612736, 393218, 65538, 1610612738, 458754, 196610, 5, 524290, 2, 1, 589826, 2, 2, 3, 65538, 2, 65539, 65538, 2, 131075, 65538, 2, 196611, 589826, 1610612737, 262147, 589826, 1610612737, 327683, 458754, 1610612737, 393219, 524290, 1610612736, 458755, 65538, 2, 524291, 65538, 2, 589827, 65538, 2, 4, 589826, 1610612736, 65540, 458754, 1610612737, 131076, 393218, 1610612738, 196612, 589826, 1610612736, 262148, 589826, 1610612737, 327684, 524290, 1610612738, 393220, 524290, 1610612738, 458756, 458754, 1610612737, 524292, 524290, 1610612736, 589828, 458754, 1610612736, 5, 589826, 1610612737, 65541, 458754, 1610612737, 131077, 524290, 1610612737, 196613, 393218, 1610612737, 262149, 458754, 1610612736, 327685, 393218, 1610612736, 393221, 524290, 1610612738, 458757, 393218, 1610612738, 524293, 393218, 1610612738, 589829, 589826, 1610612737, 6, 196610, 1610612739, 65542, 131074, 1610612739, 131078, 196610, 1610612739, 196614, 589826, 1610612736, 262150, 458754, 1610612737, 327686, 589826, 1610612737, 393222, 393218, 1610612737, 458758, 131074, 1610612739, 524294, 196610, 1610612739, 589830, 196610, 1610612739, 7, 131074, 1610612740, 65543, 65538, 1610612740, 131079, 262146, 1610612740, 196615, 65538, 1610612740, 262151, 131074, 1610612740, 327687, 131074, 1610612740, 393223, 196610, 1610612740, 458759, 65538, 1610612740, 524295, 262146, 1610612740, 589831, 262146, 1610612740)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dsut3"]
+polygon = PackedVector2Array(0.75, 8, -8, 8, -8, -8, 0.75, -8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n2mcv"]
+polygon = PackedVector2Array(-8, -8, -8, 8, 9.125, 8.25, 8, 8, 8, -0.25, 0.875, -0.25, 0.875, -8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2u20v"]
+polygon = PackedVector2Array(8, -0.75, 8, 8, -8, 8, -8, -0.75)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cc4cb"]
+polygon = PackedVector2Array(-0.75, 8, 8, 8, 8, -8, -0.75, -8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bakwq"]
+polygon = PackedVector2Array(-0.75, 8, 8, 8, 8, -8, -0.75, -8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d44pr"]
+polygon = PackedVector2Array(0.75, 8, -8, 8, -8, -0.25, -0.625, -0.25, -0.625, -8, 8, -8, 8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dd2k6"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xvxac"]
 texture = ExtResource("1_tgfnd")
 0:0/next_alternative_id = 2
 0:0/0 = 0
 0:0/0/terrain_set = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_dsut3")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.625, -8, 0.75, 8, 8, 8, 8, -8)
 0:0/0/terrains_peering_bit/right_side = 1
 0:0/0/terrains_peering_bit/bottom_right_corner = 1
@@ -99,6 +124,7 @@ texture = ExtResource("1_tgfnd")
 4:0/1 = 1
 5:0/0 = 0
 5:0/0/terrain_set = 0
+5:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_cc4cb")
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.875, -8, -0.875, 8, -8, 8)
 5:0/0/terrains_peering_bit/bottom_left_corner = 1
 5:0/0/terrains_peering_bit/left_side = 1
@@ -110,6 +136,7 @@ texture = ExtResource("1_tgfnd")
 0:1/0 = 0
 0:1/0/terrain_set = 0
 0:1/0/probability = 0.33
+0:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_dsut3")
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 0.875, -8, 0.875, 8, 8, 8)
 0:1/0/terrains_peering_bit/right_side = 1
 0:1/0/terrains_peering_bit/top_right_corner = 1
@@ -144,6 +171,7 @@ texture = ExtResource("1_tgfnd")
 5:1/0 = 0
 5:1/0/terrain_set = 0
 5:1/0/probability = 0.33
+5:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_bakwq")
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.875, -8, -0.875, 8, -8, 8)
 5:1/0/terrains_peering_bit/bottom_left_corner = 1
 5:1/0/terrains_peering_bit/left_side = 1
@@ -152,11 +180,12 @@ texture = ExtResource("1_tgfnd")
 7:1/0 = 0
 8:1/0 = 0
 9:1/0 = 0
-0:2/next_alternative_id = 2
+0:2/next_alternative_id = 3
 0:2/0 = 0
 0:2/0/terrain_set = 0
 0:2/0/probability = 0.33
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 0.875, -8, 0.875, 8, 8, 8)
+0:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_dsut3")
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.25, -8, 1.5, 0.125, 8, -0.25, 8, -8)
 0:2/0/terrains_peering_bit/right_side = 1
 0:2/0/terrains_peering_bit/bottom_right_corner = 1
 0:2/0/terrains_peering_bit/top_right_corner = 1
@@ -193,6 +222,7 @@ texture = ExtResource("1_tgfnd")
 5:2/0 = 0
 5:2/0/terrain_set = 0
 5:2/0/probability = 0.33
+5:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_bakwq")
 5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.875, -8, -0.875, 8, -8, 8)
 5:2/0/terrains_peering_bit/bottom_left_corner = 1
 5:2/0/terrains_peering_bit/left_side = 1
@@ -205,6 +235,7 @@ texture = ExtResource("1_tgfnd")
 0:3/0 = 0
 0:3/0/terrain_set = 0
 0:3/0/probability = 0.33
+0:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_dsut3")
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 0.875, -8, 0.875, 8, 8, 8)
 0:3/0/terrains_peering_bit/right_side = 1
 0:3/0/terrains_peering_bit/bottom_right_corner = 1
@@ -240,17 +271,20 @@ texture = ExtResource("1_tgfnd")
 5:3/0 = 0
 5:3/0/terrain_set = 0
 5:3/0/probability = 0.33
+5:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_bakwq")
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.875, -8, -0.875, 8, -8, 8)
 5:3/0/terrains_peering_bit/bottom_left_corner = 1
 5:3/0/terrains_peering_bit/left_side = 1
 5:3/0/terrains_peering_bit/top_left_corner = 1
 0:4/0 = 0
 0:4/0/terrain_set = 0
+0:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_n2mcv")
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.25, -8, 8, -8, 8, -0.125, 0.25, 0)
 0:4/0/terrains_peering_bit/top_right_corner = 1
 1:4/0 = 0
 1:4/0/terrain_set = 0
 1:4/0/probability = 0.25
+1:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2u20v")
 1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:4/0/terrains_peering_bit/top_left_corner = 1
 1:4/0/terrains_peering_bit/top_side = 1
@@ -258,6 +292,7 @@ texture = ExtResource("1_tgfnd")
 2:4/0 = 0
 2:4/0/terrain_set = 0
 2:4/0/probability = 0.25
+2:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2u20v")
 2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 2:4/0/terrains_peering_bit/top_left_corner = 1
 2:4/0/terrains_peering_bit/top_side = 1
@@ -265,6 +300,7 @@ texture = ExtResource("1_tgfnd")
 3:4/0 = 0
 3:4/0/terrain_set = 0
 3:4/0/probability = 0.25
+3:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2u20v")
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 3:4/0/terrains_peering_bit/top_left_corner = 1
 3:4/0/terrains_peering_bit/top_side = 1
@@ -272,12 +308,14 @@ texture = ExtResource("1_tgfnd")
 4:4/0 = 0
 4:4/0/terrain_set = 0
 4:4/0/probability = 0.25
+4:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2u20v")
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 4:4/0/terrains_peering_bit/top_left_corner = 1
 4:4/0/terrains_peering_bit/top_side = 1
 4:4/0/terrains_peering_bit/top_right_corner = 1
 5:4/0 = 0
 5:4/0/terrain_set = 0
+5:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_d44pr")
 5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, -0.125, -0.875, -0.125, -0.875, -8)
 5:4/0/terrains_peering_bit/top_left_corner = 1
 0:5/0 = 0
@@ -297,10 +335,13 @@ texture = ExtResource("1_tgfnd")
 2:6/0 = 0
 3:6/0 = 0
 9:6/0 = 0
+9:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_dd2k6")
 0:7/0 = 0
 1:7/0 = 0
 8:7/0 = 0
+8:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_dd2k6")
 9:7/0 = 0
+9:7/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_dd2k6")
 3:7/0 = 0
 2:7/0 = 0
 13:2/size_in_atlas = Vector2i(3, 3)
@@ -311,6 +352,7 @@ texture = ExtResource("1_tgfnd")
 9:4/0 = 0
 
 [resource]
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
 terrain_set_0/mode = 0
@@ -336,3 +378,4 @@ pattern_13 = SubResource("TileMapPattern_6iwuv")
 pattern_14 = SubResource("TileMapPattern_rkqoh")
 pattern_15 = SubResource("TileMapPattern_pcj3b")
 pattern_16 = SubResource("TileMapPattern_hssf8")
+pattern_17 = SubResource("TileMapPattern_2jx2a")

@@ -80,7 +80,8 @@ tile_set = ExtResource("1_r0otk")
 
 [node name="Area2D" parent="." node_paths=PackedStringArray("solver") instance=ExtResource("2_eyw0h")]
 position = Vector2(-8, 104)
-scale = Vector2(-38.64, 1.44444)
+rotation = 3.14159
+scale = Vector2(38.64, -1.44444)
 solver = NodePath("../Torch")
 hints = Array[String](["This torch could be helpful"])
 
