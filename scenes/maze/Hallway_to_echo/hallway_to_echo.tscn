@@ -3,12 +3,12 @@
 [ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/maze/dungeon_tileset.tres" id="1_uvx2x"]
 [ext_resource type="PackedScene" path="res://scenes/torch/front_wall_torch.tscn" id="2_man3w"]
 
-[sub_resource type="Gradient" id="Gradient_fllre"]
+[sub_resource type="Gradient" id="Gradient_yubm1"]
 offsets = PackedFloat32Array(0.996721, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_u3w06"]
-gradient = SubResource("Gradient_fllre")
+gradient = SubResource("Gradient_yubm1")
 fill = 2
 
 [node name="HallwayToEcho" type="Node2D"]

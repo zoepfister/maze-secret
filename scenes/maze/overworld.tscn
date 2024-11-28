@@ -1,17 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvlaoqnucbvk4"]
+[gd_scene load_steps=5 format=3 uid="uid://bvlaoqnucbvk4"]
 
-[ext_resource type="PackedScene" uid="uid://bfo8xaojsf217" path="res://scenes/maze/hallway_to_echo/Hallway_to_echo.tscn" id="3_fjvql"]
+[ext_resource type="PackedScene" uid="uid://bfo8xaojsf217" path="res://scenes/maze/Hallway_to_echo/hallway_to_echo.tscn" id="3_fjvql"]
 [ext_resource type="PackedScene" uid="uid://c43j5sa0e8jal" path="res://scenes/torch/room/torch_room.tscn" id="3_lw87m"]
 [ext_resource type="PackedScene" uid="uid://bakxm8fuiu18n" path="res://scenes/torch/puzzle/puzzle.tscn" id="4_4q03a"]
+[ext_resource type="PackedScene" uid="uid://dvrqbsdvdix0l" path="res://scenes/maze/Entrance/entrance_path.tscn" id="4_gm16f"]
 
 [node name="world" type="Node2D"]
 position = Vector2(1113, 333)
 
 [node name="TorchRoom" parent="." instance=ExtResource("3_lw87m")]
-position = Vector2(1155, 15)
+texture_filter = 1
+position = Vector2(2103, -38)
 
 [node name="TorchPuzzle" parent="." instance=ExtResource("4_4q03a")]
-position = Vector2(1443, -352)
+texture_filter = 1
+position = Vector2(2391, -405)
 
 [node name="HallwayToEcho" parent="." instance=ExtResource("3_fjvql")]
-position = Vector2(818, -1075)
+position = Vector2(823, -1077)
+
+[node name="EntrancePath" parent="." instance=ExtResource("4_gm16f")]

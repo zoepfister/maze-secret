@@ -12,7 +12,7 @@ position = Vector2(-1761, -360)
 scale = Vector2(2, 2)
 
 [node name="Protagonist" parent="." instance=ExtResource("3_0oj13")]
-position = Vector2(183, 33)
+position = Vector2(-115, -564)
 scale = Vector2(3, 3)
 
 [node name="Line2D" parent="." node_paths=PackedStringArray("tracked") instance=ExtResource("2_f7vfc")]
