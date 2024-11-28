@@ -15,12 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://67ap0m7uu7i3" path="res://assets/protagonist/Walk/walk_up_right_torch.png" id="13_t0ow0"]
 [ext_resource type="Texture2D" uid="uid://cdti2mao0unoj" path="res://assets/protagonist/Walk/walk_Up.png" id="14_a1sa1"]
 [ext_resource type="Texture2D" uid="uid://vunncxhaehk5" path="res://assets/protagonist/Walk/walk_up_torch.png" id="15_vhatn"]
-[ext_resource type="Texture2D" uid="uid://5oivtbxn7d82" path="res://scenes/torch/torch_light_texture.tres" id="16_s8lo7"]
+[ext_resource type="Texture2D" uid="uid://5oivtbxn7d82" path="res://assets/lights/torch_light_texture.tres" id="16_s8lo7"]
 [ext_resource type="Script" path="res://scenes/player/EchoLocation/echo_location_manager.gd" id="17_4ychd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0s2ov"]
 radius = 7.0
-height = 24.0
+height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76444"]
 atlas = ExtResource("2_ei857")
@@ -882,11 +882,12 @@ animations = [{
 [node name="Protagonist" type="CharacterBody2D" groups=["Player", "player"]]
 z_index = 1
 collision_layer = 7
-collision_mask = 2
+collision_mask = 34
 script = ExtResource("1_egd0t")
 acceleration = 1000
 
 [node name="ProtagonistCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
 shape = SubResource("CapsuleShape2D_0s2ov")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
