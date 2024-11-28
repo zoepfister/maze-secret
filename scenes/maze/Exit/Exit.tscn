@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dei5t18gub2em"]
+
+[ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/maze/dungeon_tileset.tres" id="1_rewmt"]
+
+[node name="Exit" type="Node2D"]
+
+[node name="Floor - Layer 0" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_rewmt")
