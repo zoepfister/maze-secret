@@ -6,6 +6,7 @@
 size = Vector2(1, 48)
 
 [node name="Line2D" type="Line2D"]
+light_mask = 0
 default_color = Color(0.819608, 0.184314, 0.227451, 1)
 texture_mode = 1
 joint_mode = 2

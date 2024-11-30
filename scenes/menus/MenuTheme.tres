@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cqn5jqulel2gp"]
+
+[ext_resource type="FontFile" uid="uid://bfys7bsj0seti" path="res://assets/dialogs/m6x11plus.ttf" id="1_u7ine"]
+
+[resource]
+default_font = ExtResource("1_u7ine")
+default_font_size = 24
+/fonts/Font = ExtResource("1_u7ine")
+Button/colors/font_focus_color = Color(0.945098, 0.486275, 0, 1)
+Button/colors/font_hover_color = Color(0.945098, 0.486275, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0.945098, 0.486275, 0, 1)
+Button/colors/font_pressed_color = Color(0.945098, 0.631373, 0, 1)
+Button/styles/pressed = null
