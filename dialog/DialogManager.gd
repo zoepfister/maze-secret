@@ -14,6 +14,8 @@ var tracked: Node2D
 var is_dialog_active = false
 var can_advance_line = false
 
+signal dialog_finished
+
 func start_dialog(tracked_node: Node2D, lines: Array[String]):
 	if is_dialog_active:
 		return
@@ -49,5 +51,6 @@ func tween_callback():
 	if line_index >= dialog_lines.size():
 		is_dialog_active = false
 		line_index = 0
+		dialog_finished.emit()
 		return
 	_show_text_box()
