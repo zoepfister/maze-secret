@@ -74,6 +74,7 @@ flat = true
 alignment = 0
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 focus_mode = 0
 mouse_default_cursor_shape = 2

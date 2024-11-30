@@ -66,3 +66,5 @@ script = ExtResource("6_qfm87")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinTrigger"]
 position = Vector2(-810, -2)
 shape = SubResource("RectangleShape2D_5w0er")
+
+[connection signal="body_entered" from="WinTrigger" to="WinTrigger" method="_on_body_entered"]

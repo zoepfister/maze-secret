@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c43j5sa0e8jal"]
+[gd_scene load_steps=23 format=4 uid="uid://c43j5sa0e8jal"]
 
 [ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/maze/dungeon_tileset.tres" id="1_r0otk"]
 [ext_resource type="PackedScene" uid="uid://deqj2yqrbmyne" path="res://scenes/maze/decorations.tscn" id="2_8f84a"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://eqhaanrj48x2" path="res://scenes/maze/Door/front_door.tscn" id="6_ccqwa"]
 [ext_resource type="Script" path="res://scenes/torch/room/door_node.gd" id="6_sa1mx"]
 [ext_resource type="Script" path="res://interaction/interaction_area/interaction_area.gd" id="8_hhcrj"]
+[ext_resource type="PackedScene" uid="uid://utta5mr3gvbq" path="res://scenes/maze/Door/left_door.tscn" id="10_bdxqm"]
+[ext_resource type="Script" path="res://scenes/torch/room/entrance_trigger.gd" id="11_ppmy7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rai6h"]
 atlas = ExtResource("3_b46sx")
@@ -73,6 +75,9 @@ radius = 83.1865
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ebqd6"]
 size = Vector2(31, 9.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqypq"]
+size = Vector2(7, 30.5)
+
 [node name="TorchRoom" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
@@ -105,21 +110,38 @@ action_name = "Pick up"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Torch/InteractionArea"]
 shape = SubResource("CircleShape2D_xy7v2")
 
-[node name="Door" type="Node2D" parent="."]
+[node name="DoorToPuzzle" type="Node2D" parent="."]
 script = ExtResource("6_sa1mx")
 
-[node name="Door" parent="Door" instance=ExtResource("6_ccqwa")]
+[node name="Door" parent="DoorToPuzzle" instance=ExtResource("6_ccqwa")]
 z_index = 1
 position = Vector2(32, -31)
 
-[node name="InteractionArea" type="Area2D" parent="Door/Door"]
+[node name="InteractionArea" type="Area2D" parent="DoorToPuzzle/Door"]
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("8_hhcrj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Door/InteractionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorToPuzzle/Door/InteractionArea"]
 position = Vector2(0, 31.75)
 shape = SubResource("RectangleShape2D_ebqd6")
 
-[connection signal="body_entered" from="Door/Door/InteractionArea" to="Door/Door/InteractionArea" method="_on_body_entered"]
-[connection signal="body_exited" from="Door/Door/InteractionArea" to="Door/Door/InteractionArea" method="_on_body_exited"]
+[node name="EntranceDoor" parent="." instance=ExtResource("10_bdxqm")]
+z_index = 1
+position = Vector2(-166, 176)
+scale = Vector2(2, 2)
+is_open = true
+
+[node name="EntranceTrigger" type="Area2D" parent="EntranceDoor" node_paths=PackedStringArray("door")]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("11_ppmy7")
+door = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntranceDoor/EntranceTrigger"]
+position = Vector2(14.5, 0.25)
+shape = SubResource("RectangleShape2D_hqypq")
+
+[connection signal="body_entered" from="DoorToPuzzle/Door/InteractionArea" to="DoorToPuzzle/Door/InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="DoorToPuzzle/Door/InteractionArea" to="DoorToPuzzle/Door/InteractionArea" method="_on_body_exited"]
+[connection signal="body_entered" from="EntranceDoor/EntranceTrigger" to="EntranceDoor/EntranceTrigger" method="_on_body_entered"]
