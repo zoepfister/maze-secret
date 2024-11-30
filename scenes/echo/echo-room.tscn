@@ -24,7 +24,6 @@ size = Vector2(10, 27.5)
 [node name="PuzzleRoom" type="Node2D"]
 
 [node name="Dark" type="PointLight2D" parent="."]
-visible = false
 position = Vector2(-225.5, -4.49998)
 scale = Vector2(7.95312, 7.79688)
 color = Color(0.747961, 0.535049, 0.613653, 1)
