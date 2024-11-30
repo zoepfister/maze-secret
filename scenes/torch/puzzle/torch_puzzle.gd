@@ -49,7 +49,6 @@ func _on_solution_torch_timer_timeout() -> void:
 		_show_torch()
 
 func _on_lit_up(torch: MazeTorch):
-	print(torch.name)
 	var torch_index: int = torch.get_meta("index")
 	player_solution.push_back(torch_index)
 	if player_solution.size() == 4:

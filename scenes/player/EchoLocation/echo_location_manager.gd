@@ -12,7 +12,7 @@ var action_locked = false
 func _process(delta):
 	time_since_last_spawn += delta
 	if Input.is_action_pressed("echolocateI") and Input.is_action_pressed("echolocateJ") and not action_locked:
-		print_debug("Echolocation pressed")
+		#print_debug("Echolocation pressed")
 		action_locked = true
 		spawn_circle()
 		time_since_last_spawn = 0
@@ -25,7 +25,7 @@ func _process(delta):
 		if circle.alpha <= -.3:
 			circle.queue_free()
 			active_circles.erase(circle)
-			print_debug("Circle removed")
+			#print_debug("Circle removed")
 
 func spawn_circle():
 	var new_circle = circle_scene.instantiate()
