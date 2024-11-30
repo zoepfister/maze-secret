@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=4 uid="uid://deqj2yqrbmyne"]
+
+[ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/maze/dungeon_tileset.tres" id="1_fd65d"]
+
+[node name="Decorations" type="TileMapLayer"]
+z_index = 2
+tile_map_data = PackedByteArray("AAD//wMAAgABAAAAAQD//wIAAgADAAAAAQD//wAAAgAIAAcAAAD//wEAAgACAAAAAQABAPr/AgABAAAAAQABAPv/AgACAAAAAQACAPr/AgABAAAAAQACAPv/AgACAAAAAQABAPz/AgAEAAAAAQACAPz/AgAEAAAAAQADAPr/AgADAAAAAQADAPv/AgABAAAAAQADAPz/AgAEAAAAAQAAAPr/AgABAAAAAQAAAPv/AgAEAAAAAQD///r/AgADAAAAAAD///v/AgACAAAAAAD///z/AgABAAAAAAAEAPr/AgADAAAAAAAEAPv/AgABAAAAAAAEAPz/AgADAAAAAAAAAPz/AgAEAAAAAQAAAP3/AgABAAAAAQADAP3/AgABAAAAAQA=")
+tile_set = ExtResource("1_fd65d")

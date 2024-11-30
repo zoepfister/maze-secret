@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bfo8xaojsf217" path="res://scenes/maze/Hallway_to_echo/hallway_to_echo.tscn" id="3_fjvql"]
 [ext_resource type="PackedScene" uid="uid://c43j5sa0e8jal" path="res://scenes/torch/room/torch_room.tscn" id="3_lw87m"]
+[ext_resource type="PackedScene" uid="uid://btld2at7vavjl" path="res://scenes/echo/echo-room.tscn" id="3_x3lno"]
 [ext_resource type="PackedScene" uid="uid://bakxm8fuiu18n" path="res://scenes/torch/puzzle/puzzle.tscn" id="4_4q03a"]
 [ext_resource type="PackedScene" uid="uid://devhj8ta6ycbb" path="res://scenes/player/EchoLocation/FakeWall.tscn" id="5_pshxv"]
 [ext_resource type="TileSet" uid="uid://7ogp8m8nlbc1" path="res://assets/maze/dungeon_tileset.tres" id="6_1wusp"]

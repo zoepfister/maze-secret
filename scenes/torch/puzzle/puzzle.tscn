@@ -10,12 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://utta5mr3gvbq" path="res://scenes/maze/Door/left_door.tscn" id="8_5ykfd"]
 [ext_resource type="Script" path="res://scenes/maze/Door/door_with_logic.gd" id="9_0xgkk"]
 
-[sub_resource type="Gradient" id="Gradient_qqx40"]
+[sub_resource type="Gradient" id="Gradient_lxjs8"]
 offsets = PackedFloat32Array(0)
 colors = PackedColorArray(0.454524, 0.454524, 0.454524, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lhfo0"]
-gradient = SubResource("Gradient_qqx40")
+gradient = SubResource("Gradient_lxjs8")
 fill = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qv0qn"]
