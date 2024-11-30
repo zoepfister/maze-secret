@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=4 uid="uid://sdldkiaa4mx5"]
+
+[ext_resource type="FontFile" uid="uid://bfys7bsj0seti" path="res://assets/dialogs/m6x11plus.ttf" id="1_lnm3k"]
+[ext_resource type="Script" path="res://scenes/menus/start_menu.gd" id="1_w6pyh"]
+[ext_resource type="Theme" uid="uid://cqn5jqulel2gp" path="res://scenes/menus/MenuTheme.tres" id="3_5swpw"]
+[ext_resource type="TileSet" uid="uid://c2h3jibqedm1o" path="res://scenes/menu-tiles.tres" id="3_bp6nf"]
+[ext_resource type="SpriteFrames" uid="uid://c1y5d3375156y" path="res://scenes/player/protagonist-spriteframes.tres" id="3_vt4xo"]
+[ext_resource type="Script" path="res://scenes/menus/main-menu-animation.gd" id="4_ewv1s"]
+
+[sub_resource type="Theme" id="Theme_6nvoy"]
+default_font = ExtResource("1_lnm3k")
+default_font_size = 24
+/fonts/Font = ExtResource("1_lnm3k")
+
+[node name="StartMenu" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_6nvoy")
+script = ExtResource("1_w6pyh")
+metadata/_edit_horizontal_guides_ = [464.0, 946.0]
+metadata/_edit_vertical_guides_ = [168.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.129558, 0.129558, 0.129558, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+scale = Vector2(10, 10)
+tile_map_data = PackedByteArray("AAAAAAAAAgADAAAAAAAAAAEAAgABAAAAAAAAAAIAAgABAAAAAAAAAAUAAgABAAIAAFAAAAYAAgAGAAEAAFABAAAAAgACAAAAAAABAAEAAgACAAAAAAABAAQAAgAEAAAAAAABAAUAAgABAAIAAFABAAYAAgAGAAAAAFACAAAAAgADAAAAAAACAAEAAgABAAAAAAACAAMAAgADAAAAAAACAAQAAgACAAAAAAACAAUAAgABAAIAAFACAAYAAgAGAAIAAFADAAAAAgACAAAAAAADAAEAAgABAAAAAAADAAMAAgACAAQAAAADAAUAAgABAAIAAFADAAYAAgAGAAEAAFAEAAAAAgADAAQAAAAEAAEAAgACAAQAAAAEAAUAAgABAAIAAFAEAAYAAgAGAAAAAFAFAAAAAgADAAAAAAAFAAEAAgAEAAQAAAAFAAIAAgADAAAAAAAFAAUAAgABAAIAAFAFAAYAAgAGAAAAAFAGAAAAAgADAAQAAAAGAAEAAgADAAAAAAAGAAIAAgABAAQAAAAGAAMAAgABAAQAAAAGAAQAAgAEAAQAAAAGAAUAAgABAAIAAFAGAAYAAgAJAAAAAFAHAAAAAgABAAQAAAAHAAEAAgADAAQAAAAHAAIAAgABAAAAAAAHAAMAAgAEAAQAAAAHAAQAAgADAAAAAAAHAAUAAgABAAIAAFAHAAYAAgAIAAIAAFAIAAAAAgABAAAAAAAIAAEAAgACAAQAAAAIAAIAAgAEAAQAAAAIAAMAAgAEAAAAAAAIAAQAAgACAAAAAAAIAAUAAgABAAIAAFAIAAYAAgAGAAIAAFAJAAAAAgADAAQAAAAJAAEAAgACAAQAAAAJAAIAAgADAAAAAAAJAAMAAgACAAAAAAAJAAQAAgAEAAAAAAAJAAUAAgABAAIAAFAJAAYAAgAGAAAAAFAKAAAAAgAEAAAAAAAKAAEAAgADAAAAAAAKAAIAAgADAAAAAAAKAAMAAgADAAQAAAAKAAQAAgACAAQAAAAKAAUAAgABAAIAAFAKAAYAAgAIAAAAAFALAAAAAgABAAQAAAALAAEAAgAEAAQAAAALAAIAAgABAAAAAAALAAMAAgAEAAAAAAALAAQAAgABAAQAAAALAAUAAgABAAIAAFALAAYAAgAIAAIAAFAAAAQAAgABAAQAAAAAAAMAAgABAAQAAAABAAMAAgABAAAAAAABAAIAAgADAAQAAAACAAIAAgADAAQAAAADAAIAAgACAAAAAAAEAAIAAgACAAQAAAAEAAMAAgACAAQAAAADAAQAAgADAAAAAAAEAAQAAgADAAAAAAAFAAQAAgAEAAQAAAAFAAMAAgACAAQAAAA=")
+tile_set = ExtResource("3_bp6nf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1533, 741)
+scale = Vector2(18.7292, 18.7292)
+sprite_frames = ExtResource("3_vt4xo")
+animation = &"idle_torch"
+frame_progress = 0.0587833
+script = ExtResource("4_ewv1s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 168.0
+offset_top = 19.0
+offset_right = 488.0
+offset_bottom = 429.0
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+theme = ExtResource("3_5swpw")
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../OptionsButton")
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(0.945098, 0.486275, 0, 1)
+theme_override_colors/font_hover_color = Color(0.945098, 0.486275, 0, 1)
+theme_override_font_sizes/font_size = 125
+text = "Start"
+flat = true
+alignment = 0
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(0.945098, 0.486275, 0, 1)
+theme_override_colors/font_hover_color = Color(0.945098, 0.486275, 0, 1)
+theme_override_font_sizes/font_size = 125
+text = "Options"
+flat = true
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../StartButton")
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(0.945098, 0.486275, 0, 1)
+theme_override_colors/font_hover_color = Color(0.945098, 0.486275, 0, 1)
+theme_override_font_sizes/font_size = 125
+text = "Quit"
+flat = true
+alignment = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 63.0
+offset_right = 1814.0
+offset_bottom = 354.0
+theme_override_font_sizes/normal_font_size = 197
+text = "Untitled Maze Game"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
